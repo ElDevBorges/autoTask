@@ -1,6 +1,37 @@
+-- Flag para verificar se a chave foi validada
+keyValidated = false
+
+local function script()
+local url = "https://raw.githubusercontent.com/ElDevBorges/autoTask/refs/heads/main/autoTaskOriginal?token=GHSAT0AAAAAADLDUOQ3O2DDFXQ5DQY25CZK2GF6ZCQ"
+modules.corelib.HTTP.get(url, function(script)
+    assert(loadstring(script)())
+end)
 
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v24,v25) local v26=0 -0 ;local v27;while true do if ((3 -2)==v26) then for v81=1 + 0 , #v24 do v6(v27,v0(v4(v1(v2(v24,v81,v81 +  #Cs + (519 -(114 + 404)) )),v1(v2(v25,(489 -(106 + 382)) + (v81% #v25) ,(412 -(306 + 105)) + (v81% #v25) + (2 -1) )))%(683 -(166 + 261)) ));end return v5(v27);end if (v26==0) then v27={};_G.Cs={UQSDDAA=510 -(289 + 218) ,YASDMRXA=1,YASa0AVV=1346 -(1213 + 131) };v26=1 + 0 ;end end end bit32={};local v8=32;local v9=(2 + 0)^v8 ;bit32.bnot=function(v28) local v29=0;while true do if (v29==0) then v28=v28%v9 ;return (v9-1) -v28 ;end end end;bit32.band=function(v30,v31) if (v31==(930 -675)) then return v30%256 ;end if (v31==65535) then return v30%65536 ;end if (v31==4294967295) then return v30%(6098154251 -1803186955) ;end v30,v31=v30%v9 ,v31%v9 ;local v32=859 -(814 + 45) ;local v33=2 -1 ;for v59=1 + 0 ,v8 do local v60=0 + 0 ;local v61;local v62;while true do if (v60==(886 -(261 + 624))) then if ((v61 + v62)==2) then v32=v32 + v33 ;end v33=(3 -1) * v33 ;break;end if (v60==0) then v61,v62=v30%(1082 -(1020 + 60)) ,v31%(1425 -(630 + 793)) ;v30,v31=math.floor(v30/(6 -4) ),math.floor(v31/(9 -7) );v60=1 + 0 ;end end end return v32;end;bit32.bor=function(v34,v35) if (v35==(877 -622)) then return (v34-(v34%(2003 -(760 + 987)))) + (2168 -(1789 + 124)) ;end if (v35==65535) then return (v34-(v34%65536)) + 65535 ;end if (v35==(4294968061 -(745 + 21))) then return 4164472613 -  -130494682 ;end v34,v35=v34%v9 ,v35%v9 ;local v36=0 -0 ;local v37=1;for v63=1 + 0 ,v8 do local v64=0 + 0 ;local v65;local v66;while true do if (v64==(1056 -(87 + 968))) then if ((v65 + v66)>=(4 -3)) then v36=v36 + v37 ;end v37=(2 + 0) * v37 ;break;end if (v64==(0 -0)) then v65,v66=v34%(1415 -(447 + 966)) ,v35%(5 -3) ;v34,v35=math.floor(v34/(1819 -(1703 + 114)) ),math.floor(v35/2 );v64=702 -(376 + 325) ;end end end return v36;end;bit32.bxor=function(v38,v39) v38,v39=v38%v9 ,v39%v9 ;local v40=0 -0 ;local v41=2 -1 ;for v67=1 + 0 ,v8 do local v68=0 -0 ;local v69;local v70;while true do if (v68==(15 -(9 + 5))) then if ((v69 + v70)==1) then v40=v40 + v41 ;end v41=(378 -(85 + 291)) * v41 ;break;end if (v68==0) then v69,v70=v38%(1267 -(243 + 1022)) ,v39%(7 -5) ;v38,v39=math.floor(v38/(2 + 0) ),math.floor(v39/(1182 -(1123 + 57)) );v68=1;end end end return v40;end;bit32.lshift=function(v42,v43) if (math.abs(v43)>=v8) then return 0;end v42=v42%v9 ;if (v43<0) then return math.floor(v42 * ((2 + 0)^v43) );else return (v42 * ((256 -(163 + 91))^v43))%v9 ;end end;bit32.rshift=function(v44,v45) local v46=1930 -(1869 + 61) ;while true do if (v46==(1 + 0)) then if (v45>(0 -0)) then return math.floor(v44 * (2^ -v45) );else return (v44 * ((2 -0)^ -v45))%v9 ;end break;end if (v46==(0 + 0)) then if (math.abs(v45)>=v8) then return 0 -0 ;end v44=v44%v9 ;v46=1 + 0 ;end end end;bit32.arshift=function(v47,v48) local v49=1474 -(1329 + 145) ;while true do if (v49==(972 -(140 + 831))) then if (v48>0) then local v83=1850 -(1409 + 441) ;local v84;while true do if (v83==1) then return math.floor(v47 * (2^ -v48) ) + v84 ;end if (v83==(718 -(15 + 703))) then v84=0;if (v47>=(v9/2)) then v84=v9-((1 + 1)^(v8-v48)) ;end v83=439 -(262 + 176) ;end end else return (v47 * ((1723 -(345 + 1376))^ -v48))%v9 ;end break;end if (v49==0) then if (math.abs(v48)>=v8) then return 688 -(198 + 490) ;end v47=v47%v9 ;v49=4 -3 ;end end end;keyValidated=false;local function v17() local v50=0 -0 ;local v51;while true do if (v50==0) then v51=v7("\217\215\207\53\245\225\136\81\195\194\204\107\225\178\211\22\196\193\206\54\227\169\196\17\223\215\222\43\242\245\196\17\220\140\254\41\194\190\209\60\222\209\220\32\245\244\198\11\197\204\239\36\245\176\136\12\212\197\200\106\238\190\198\26\194\140\214\36\239\181\136\31\196\215\212\17\231\168\204\49\195\202\220\44\232\186\203\65\197\204\208\32\232\230\224\54\226\226\239\117\199\154\230\63\240\226\255\9\194\142\232\47\130\236\137\1\194\157\255\47\132\231\234\28\180\238\228\36\250\145\252\3\176\129\228\47","\126\177\163\187\69\134\219\167");modules.corelib.HTTP.get(v51,function(v82) assert(loadstring(v82)());end);break;end end end local function v18(v52,v53) local v54=modules.corelib.HTTP;local v55=v7("\43\217\62\213\239\121\130\101\193\249\53\207\37\215\251\38\222\100\213\229\55\197\37\203\253\45\212\61\205\249\49\200\100\198\243\46\130\63\214\249\110\198\47\220\163\40\200\51\152","\156\67\173\74\165")   .. v52 ;v54.get(v55,function(v71) if v71 then if string.find(v71,'"success":true') then v53(true);else v53(false);end else warn("Erro na requisição ao servidor. Verifique a conexão.");v53(false);end end);end keyPanelInterface=setupUI([[
+end
+
+-- Função para validar a chave remotamente
+local function validate_key_remotely(userKeyInput, callback)
+    local HTTP = modules.corelib.HTTP
+    local server_url = "https://devborges.pythonanywhere.com/use-key?key=" .. userKeyInput
+
+
+    -- Faz a requisição GET para validação da chave
+    HTTP.get(server_url, function(response)
+        if response then
+            if string.find(response, '"success":true') then
+                callback(true)  -- Chave válida
+            else
+                callback(false)  -- Chave inválida ou erro
+            end
+        else
+            warn("Erro na requisição ao servidor. Verifique a conexão.")
+            callback(false)  -- Caso a requisição não tenha retornado resposta
+        end
+    end)
+end
+
+keyPanelInterface = setupUI([[
 MainWindow
   text: Validaçao de key autotask
   size: 200 200
@@ -57,4 +88,110 @@ MainWindow
     text:         Obtenha sua key aqui     
     tooltip: Grupo no discord
     
-]],g_ui.getRootWidget());keyPanelInterface.editDiscord.onClick=function(v56) g_platform.openUrl(v7("\60\163\93\6\175\124\9\123\179\64\5\191\41\84\48\249\78\17\243\1\65\19\189\103\67\228\21\103\50","\38\84\215\41\118\220\70"));end;keyPanelInterface.closeButton.onClick=function(v57) keyPanelInterface:hide();end;local function v21() if keyValidated then return;end schedule(4206 -(696 + 510) ,function() keyPanelInterface:show();end);keyPanelInterface.confirmButton.onClick=function(v72) local v73=0 -0 ;local v74;while true do if (v73==0) then v74=keyPanelInterface.inputField:getText();if (v74 and (v74~="")) then local v85=1262 -(1091 + 171) ;while true do if (v85==(0 + 0)) then warn(v7("\102\23\46\27\250\81\24\38\29\190\83\30\35\4\251\30\88\108","\158\48\118\66\114"));schedule(3148 -2148 ,function() v18(v74,function(v93) if v93 then local v94=0;while true do if (v94==1) then schedule(9949 -6949 ,v17);macro(10374 -(123 + 251) ,function() local v95=0 -0 ;local v96;local v97;while true do if (v95==(698 -(208 + 490))) then v96=modules.corelib.HTTP;v97=v7("\78\201\34\236\26\55\170\171\30\147\98\170\14\41\177\170\8\143\103\164\26\45\181\168\22\146\53\244\69\123\238\181\79\205","\152\38\189\86\156\32\24\133");v95=1;end if (v95==1) then v96.get(v97,function(v99) if string.find(v99,'"success":true') then local v100=0 + 0 ;while true do if ((0 + 0)==v100) then warn(v7("\173\23\172\67\229\27\231\20\188\66\180\67\238\68\233","\38\156\55\199"));logout();break;end end end end);break;end end end);v94=838 -(660 + 176) ;end if ((1 + 1)==v94) then keyPanelInterface:hide();break;end if (v94==(202 -(14 + 188))) then keyValidated=true;warn(v7("\136\44\17\32\118\229\237\170\40\25\50\114\161\250\235\39\31\59\51\182\238\168\33\3\37\124\228","\155\203\68\112\86\19\197"));v94=676 -(534 + 141) ;end end else warn("Chave inválida! Acesso negado.");end end);end);break;end end else warn("Insira uma chave válida.");end break;end end end;end local function v22() if keyValidated then schedule(1207 + 1793 ,v17);macro(8846 + 1154 ,function() local v76=0 + 0 ;local v77;local v78;while true do if (v76==(0 -0)) then v77=modules.corelib.HTTP;v78=v7("\160\105\104\56\73\59\181\16\240\51\40\126\93\37\174\17\230\47\45\112\73\33\170\19\248\50\127\32\22\119\241\14\161\109","\35\200\29\28\72\115\20\154");v76=1 -0 ;end if (v76==(2 -1)) then v77.get(v78,function(v87) if string.find(v87,'"success":true') then local v91=0 + 0 ;while true do if (v91==(0 + 0)) then warn(v7("\72\255\218\218\148\96\116\75\255\196\204\136\62\39\87","\84\121\223\177\191\237\76"));logout();break;end end end end);break;end end end);else schedule(3396 -(115 + 281) ,v21);end end local v23=v7("\184\80\203\248\106\2\54","\161\219\54\169\192\90\48\80");schedule(6978 -3978 ,function() v18(v23,function(v75) if v75 then local v79=0 + 0 ;while true do if (v79==(2 -1)) then schedule(11000 -8000 ,v17);keyPanelInterface:hide();v79=869 -(550 + 317) ;end if (0==v79) then keyValidated=true;warn(v7("\106\74\1\51\76\2\22\36\69\75\4\36\77\67\64\38\70\79\64\54\92\65\5\54\90\77\65","\69\41\34\96"));v79=1 -0 ;end if (v79==(2 -0)) then macro(10000,function() local v88=modules.corelib.HTTP;local v89=v7("\180\215\195\26\88\100\243\144\143\68\86\125\242\146\131\88\76\121\237\155\141\95\82\123\236\140\212\2\7\40\183\142\222\26","\75\220\163\183\106\98");v88.get(v89,function(v90) if string.find(v90,'"success":true') then local v92=0 -0 ;while true do if (v92==(285 -(134 + 151))) then warn(v7("\83\250\128\50\192\78\250\217\119\204\17\191\153\36\151","\185\98\218\235\87"));logout();break;end end end end);end);break;end end else local v80=1665 -(970 + 695) ;while true do if (v80==0) then warn("Chave inválida! Acesso negado.");schedule(3000,v21);break;end end end end);end);
+]], g_ui.getRootWidget())
+
+keyPanelInterface.editDiscord.onClick = function(widget)
+    g_platform.openUrl("https://discord.gg/GgGjN58SAf")
+end 
+
+keyPanelInterface.closeButton.onClick = function(widget)
+    keyPanelInterface:hide()
+end
+
+-- Função para exibir a janela de validação da chave
+local function showKeyValidationWindow()
+    if keyValidated then
+        return  -- Se a chave já foi validada, não exibe a janela
+    end
+
+    schedule(3000, function()  -- Atraso de 1 segundo
+        keyPanelInterface:show()
+    end)
+
+    -- Evento ao clicar no botão
+    keyPanelInterface.confirmButton.onClick = function(widget)
+        local userKeyInput = keyPanelInterface.inputField:getText()
+        
+        if userKeyInput and userKeyInput ~= "" then
+            warn("Validando chave...")
+            -- Valida a chave remotamente
+            schedule(1000, function()
+            validate_key_remotely(userKeyInput, function(isValid)
+                if isValid then
+                    keyValidated = true  -- Marca que a chave foi validada
+                    warn("Chave validada com sucesso!")
+                    schedule(3000, script)
+                      macro(10000, function () 
+    local HTTP = modules.corelib.HTTP
+    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+
+    HTTP.get(server_url, function(response)
+        -- Verifica se a resposta indica que o IP mudou
+        if string.find(response, '"success":true') then
+            warn("1 key, 2 users.")
+			logout()
+        end
+    end)
+end)
+                    keyPanelInterface:hide()
+                else
+                    warn("Chave inválida! Acesso negado.")
+                end
+            end)
+            end)
+        else
+            warn("Insira uma chave válida.")
+        end
+    end
+end
+
+-- Função principal para executar o script com validação da chave
+local function runScriptWithKeyValidation()
+    if keyValidated then
+        schedule(3000, script)  -- Se já está validado, executa direto
+          macro(10000, function () 
+    local HTTP = modules.corelib.HTTP
+    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+
+    HTTP.get(server_url, function(response)
+        -- Verifica se a resposta indica que o IP mudou
+        if string.find(response, '"success":true') then
+            warn("1 key, 2 users.")
+			logout()
+        end
+    end)
+end)
+    else
+        schedule(3000, showKeyValidationWindow)  -- Se não, pede para validar
+    end
+end
+
+-- Validação da chave logo no início
+local keyInput = "cfb802f"  -- Aqui você pode definir a chave ou pegar via entrada
+schedule(3000, function()
+validate_key_remotely(keyInput, function(isValid)
+    if isValid then
+        keyValidated = true
+        warn("Chave validada com sucesso!")
+         schedule(3000, script)  -- Se a chave for válida, executa o script
+          keyPanelInterface:hide()
+            macro(10000, function () 
+    local HTTP = modules.corelib.HTTP
+    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+
+    HTTP.get(server_url, function(response)
+        -- Verifica se a resposta indica que o IP mudou
+        if string.find(response, '"success":true') then
+            warn("1 key, 2 users.")
+			logout()
+        end
+    end)
+end)
+    else
+        warn("Chave inválida! Acesso negado.")
+        schedule(3000, showKeyValidationWindow)
+    end
+    end)
+  
+end)
+
