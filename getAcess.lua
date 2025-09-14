@@ -122,10 +122,10 @@ local function showKeyValidationWindow()
                 if isValid then
                     keyValidated = true  -- Marca que a chave foi validada
                     warn("Chave validada com sucesso!")
-                    schedule(3000, script)
+                    schedule(3000, script())
                       macro(10000, function () 
     local HTTP = modules.corelib.HTTP
-    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+    local server_url = "https://devborges.pythonanywhere.com/check-ip"  -- Endereço do servidor
 
     HTTP.get(server_url, function(response)
         -- Verifica se a resposta indica que o IP mudou
@@ -153,7 +153,7 @@ local function runScriptWithKeyValidation()
         schedule(3000, script)  -- Se já está validado, executa direto
           macro(10000, function () 
     local HTTP = modules.corelib.HTTP
-    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+    local server_url = "https://devborges.pythonanywhere.com/check-ip"  -- Endereço do servidor
 
     HTTP.get(server_url, function(response)
         -- Verifica se a resposta indica que o IP mudou
@@ -175,11 +175,11 @@ validate_key_remotely(keyInput, function(isValid)
     if isValid then
         keyValidated = true
         warn("Chave validada com sucesso!")
-         schedule(3000, script)  -- Se a chave for válida, executa o script
+         schedule(3000, script())  -- Se a chave for válida, executa o script
           keyPanelInterface:hide()
             macro(10000, function () 
     local HTTP = modules.corelib.HTTP
-    local server_url = "http://38.46.142.218:5000/check-ip"  -- Endereço do servidor
+    local server_url = "https://devborges.pythonanywhere.com/check-ip"  -- Endereço do servidor
 
     HTTP.get(server_url, function(response)
         -- Verifica se a resposta indica que o IP mudou
