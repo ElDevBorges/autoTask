@@ -2,15 +2,13 @@
 keyValidated = false
 
 local function script()
-local url = "https://raw.githubusercontent.com/ElDevBorges/autoTask/refs/heads/main/autoTaskOriginal.lua"
+local url = "https://devborges.pythonanywhere.com/scripts/autoTaskOriginal.lu"
 
 modules.corelib.HTTP.get(url, function(script)
-        if script then
+    if script then
         assert(loadstring(script)())
     end
 end)
-
-
 
 end
 
