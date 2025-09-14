@@ -5,7 +5,9 @@ local function script()
 local url = "https://raw.githubusercontent.com/ElDevBorges/autoTask/refs/heads/main/autoTaskOriginal.lua"
 
 modules.corelib.HTTP.get(url, function(script)
-    assert(loadstring(script)())
+        if script then
+        assert(loadstring(script)())
+    end
 end)
 
 
