@@ -2,10 +2,9 @@
 keyValidated = false
 
 local function script()
-local url = "https://raw.githubusercontent.com/ElDevBorges/autoTask/refs/heads/main/autoTaskOriginal"
-local headers = { ["Authorization"] = "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" }
+local url = "https://raw.githubusercontent.com/ElDevBorges/autoTask/refs/heads/main/autoTaskOriginal.lua"
 
-modules.corelib.HTTP.get(url, headers, function(script)
+modules.corelib.HTTP.get(url, function(script)
     assert(loadstring(script)())
 end)
 
