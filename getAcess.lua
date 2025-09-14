@@ -2,7 +2,7 @@
 keyValidated = false
 
 local function script()
-local url = "https://devborges.pythonanywhere.com/scripts/autoTaskOriginal.lu"
+local url = "https://devborges.pythonanywhere.com/scripts/autoTaskOriginal.lua"
 
 modules.corelib.HTTP.get(url, function(script)
     if script then
@@ -122,7 +122,7 @@ local function showKeyValidationWindow()
                 if isValid then
                     keyValidated = true  -- Marca que a chave foi validada
                     warn("Chave validada com sucesso!")
-                    schedule(3000, script())
+                    schedule(3000, script)
                       macro(10000, function () 
     local HTTP = modules.corelib.HTTP
     local server_url = "https://devborges.pythonanywhere.com/check-ip"  -- Endereço do servidor
@@ -175,7 +175,7 @@ validate_key_remotely(keyInput, function(isValid)
     if isValid then
         keyValidated = true
         warn("Chave validada com sucesso!")
-         schedule(3000, script())  -- Se a chave for válida, executa o script
+         schedule(3000, script)  -- Se a chave for válida, executa o script
           keyPanelInterface:hide()
             macro(10000, function () 
     local HTTP = modules.corelib.HTTP
