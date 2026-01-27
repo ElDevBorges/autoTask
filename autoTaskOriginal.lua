@@ -1,21 +1,198 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
+]]--
 
-bit32={};local v0=1789 -(664 + 1093) ;local v1=(4 -2)^v0 ;bit32.bnot=function(v29) local v30=0 -0 ;while true do if (v30==0) then v29=v29%v1 ;return (v1-1) -v29 ;end end end;bit32.band=function(v31,v32) local v33=0 + 0 ;local v34;local v35;while true do if (v33==0) then if (v32==255) then return v31%(254 + 2) ;end if (v32==(38159 + 27376)) then return v31%(27859 + 37677) ;end v33=1;end if (v33==(2 + 1)) then for v672=1,v0 do local v673,v674=v31%(4 -2) ,v32%(5 -3) ;v31,v32=math.floor(v31/(4 -2) ),math.floor(v32/(1 + 1) );if ((v673 + v674)==2) then v34=v34 + v35 ;end v35=(9 -7) * v35 ;end return v34;end if (v33==(755 -(239 + 514))) then v34=0;v35=1 + 0 ;v33=3;end if (v33==(1330 -(797 + 532))) then if (v32==4294967295) then return v31%(4294968013 -(476 + 241)) ;end v31,v32=v31%v1 ,v32%v1 ;v33=4 -2 ;end end end;bit32.bor=function(v36,v37) if (v37==(1457 -(373 + 829))) then return (v36-(v36%256)) + (986 -(476 + 255)) ;end if (v37==(66665 -(369 + 761))) then return (v36-(v36%(37911 + 27625))) + 65535 ;end if (v37==(4638887149 -343919854)) then return 4155381463 -  -139585832 ;end v36,v37=v36%v1 ,v37%v1 ;local v38=238 -(64 + 174) ;local v39=1 + 0 ;for v563=1 -0 ,v0 do local v564,v565=v36%(338 -(144 + 192)) ,v37%2 ;v36,v37=math.floor(v36/(218 -(42 + 174)) ),math.floor(v37/(2 + 0) );if ((v564 + v565)>=(1 + 0)) then v38=v38 + v39 ;end v39=(1 + 1) * v39 ;end return v38;end;bit32.bxor=function(v40,v41) local v42=1504 -(363 + 1141) ;local v43;local v44;while true do if (v42==(1582 -(1183 + 397))) then return v43;end if (v42==0) then v40,v41=v40%v1 ,v41%v1 ;v43=0 -0 ;v42=1;end if (v42==(1 + 0)) then v44=1 + 0 ;for v675=1,v0 do local v676=0;local v677;local v678;while true do if (1==v676) then if ((v677 + v678)==(1976 -(1913 + 62))) then v43=v43 + v44 ;end v44=(2 + 0) * v44 ;break;end if (v676==(0 -0)) then v677,v678=v40%(1935 -(565 + 1368)) ,v41%(7 -5) ;v40,v41=math.floor(v40/(1663 -(1477 + 184)) ),math.floor(v41/(2 -0) );v676=1;end end end v42=2 + 0 ;end end end;bit32.lshift=function(v45,v46) if (math.abs(v46)>=v0) then return 856 -(564 + 292) ;end v45=v45%v1 ;if (v46<(0 -0)) then return math.floor(v45 * (2^v46) );else return (v45 * (2^v46))%v1 ;end end;bit32.rshift=function(v47,v48) if (math.abs(v48)>=v0) then return 0 -0 ;end v47=v47%v1 ;if (v48>0) then return math.floor(v47 * (2^ -v48) );else return (v47 * ((306 -(244 + 60))^ -v48))%v1 ;end end;bit32.arshift=function(v49,v50) local v51=0;while true do if (v51==(1 + 0)) then if (v50>(476 -(41 + 435))) then local v726=1001 -(938 + 63) ;if (v49>=(v1/(2 + 0))) then v726=v1-(2^(v0-v50)) ;end return math.floor(v49 * (2^ -v50) ) + v726 ;else return (v49 * ((1127 -(936 + 189))^ -v50))%v1 ;end break;end if (v51==0) then if (math.abs(v50)>=v0) then return 0 + 0 ;end v49=v49%v1 ;v51=1;end end end;setDefaultTab("scripts");local v9="/bot/"   .. modules.game_bot.contentsPanel.config:getCurrentOption().text   .. "/storage/"   .. g_game.getWorldName()   .. "/" ;local v10=v9   .. name()   .. "_config.json" ;local v11={_storage={autoTask={enabled=false},autoTaksu={enabled=false},autoChouji={enabled=false}}};if  not g_resources.directoryExists(v9) then g_resources.makeDir(v9);end local function v12() if g_resources.fileExists(v10) then local v615=g_resources.readFileContents(v10);local v616,v617=pcall(json.decode,v615);if (v616 and v617 and v617._storage) then v11._storage=v617._storage;warn("Configurações carregadas com sucesso!");else warn("Erro ao carregar as configurações.");end else warn("Arquivo de configurações não encontrado. Usando configurações padrão.");end end local function v13() local v52=0;local v53;local v54;local v55;while true do if (v52==(1614 -(1565 + 48))) then if  not v54 then warn("Erro ao salvar as configurações: "   .. v55 );else warn("Configurações salvas com sucesso!");end break;end if (0==v52) then v53=json.encode(v11,3 + 1 );v54,v55=pcall(function() g_resources.writeFileContents(v10,v53);end);v52=1139 -(782 + 356) ;end end end v12();local v14=setupUI([[
-CheckBox
-  id: checkBox
-  font: cipsoftFont
-  text: AutoTask
-]]);v14.onCheckChange=function(v56,v57) local v58=0;while true do if (v58==0) then v11._storage.autoTask.enabled=v57;v13();break;end end end;v14:setChecked(v11._storage.autoTask.enabled);local v16=setupUI([[
-CheckBox
-  id: checkBox
-  font: cipsoftFont
-  text: Taksu
-]]);v16.onCheckChange=function(v59,v60) local v61=0;while true do if (0==v61) then v11._storage.autoTaksu.enabled=v60;v13();break;end end end;v16:setChecked(v11._storage.autoTaksu.enabled);local v18=setupUI([[
-CheckBox
-  id: checkBox
-  font: cipsoftFont
-  text: Chouji
-]]);v18.onCheckChange=function(v62,v63) v11._storage.autoChouji.enabled=v63;v13();end;v18:setChecked(v11._storage.autoChouji.enabled);function isAutoTaskEnabled() return v11._storage.autoTask.enabled;end function isAutoTaksuEnabled() return v11._storage.autoTaksu.enabled;end function isAutoChoujiEnabled() return v11._storage.autoChouji.enabled;end treinoo=macro(367 -(176 + 91) ,"treinar",function() if (manapercent()>=50) then say("powerdown");end end);local v20=setupUI([[
+local obf_stringchar = string.char;
+local obf_stringbyte = string.byte;
+local obf_stringsub = string.sub;
+local obf_bitlib = bit32 or bit;
+local obf_XOR = obf_bitlib.bxor;
+local obf_tableconcat = table.concat;
+local obf_tableinsert = table.insert;
+local function LUAOBFUSACTOR_DECRYPT_STR_0(LUAOBFUSACTOR_STR, LUAOBFUSACTOR_KEY)
+	local result = {};
+	for i = 1, #LUAOBFUSACTOR_STR do
+		obf_tableinsert(result, obf_stringchar(obf_XOR(obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_STR, i, i + 1)), obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_KEY, 1 + (i % #LUAOBFUSACTOR_KEY), 1 + (i % #LUAOBFUSACTOR_KEY) + 1))) % 256));
+	end
+	return obf_tableconcat(result);
+end
+bit32 = {};
+local N = 32;
+local P = 2 ^ N;
+bit32.bnot = function(x)
+	x = x % P;
+	return (P - 1) - x;
+end;
+bit32.band = function(x, y)
+	if (y == 255) then
+		return x % 256;
+	end
+	if (y == 65535) then
+		return x % 65536;
+	end
+	if (y == 4294967295) then
+		return x % 4294967296;
+	end
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) == 2) then
+			r = r + p;
+		end
+		p = 2 * p;
+	end
+	return r;
+end;
+bit32.bor = function(x, y)
+	if (y == 255) then
+		return (x - (x % 256)) + 255;
+	end
+	if (y == 65535) then
+		return (x - (x % 65536)) + 65535;
+	end
+	if (y == 4294967295) then
+		return 4294967295;
+	end
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) >= 1) then
+			r = r + p;
+		end
+		p = 2 * p;
+	end
+	return r;
+end;
+bit32.bxor = function(x, y)
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) == 1) then
+			r = r + p;
+		end
+		p = 2 * p;
+	end
+	return r;
+end;
+bit32.lshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
+	end
+	x = x % P;
+	if (s_amount < 0) then
+		return math.floor(x * (2 ^ s_amount));
+	else
+		return (x * (2 ^ s_amount)) % P;
+	end
+end;
+bit32.rshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
+	end
+	x = x % P;
+	if (s_amount > 0) then
+		return math.floor(x * (2 ^ -s_amount));
+	else
+		return (x * (2 ^ -s_amount)) % P;
+	end
+end;
+bit32.arshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
+	end
+	x = x % P;
+	if (s_amount > 0) then
+		local add = 0;
+		if (x >= (P / 2)) then
+			add = P - (2 ^ (N - s_amount));
+		end
+		return math.floor(x * (2 ^ -s_amount)) + add;
+	else
+		return (x * (2 ^ -s_amount)) % P;
+	end
+end;
+setDefaultTab(LUAOBFUSACTOR_DECRYPT_STR_0("\194\192\201\44\246\175\212", "\126\177\163\187\69\134\219\167"));
+local MAIN_DIRECTORY = LUAOBFUSACTOR_DECRYPT_STR_0("\108\207\37\209\179", "\156\67\173\74\165") .. modules.game_bot.contentsPanel.config:getCurrentOption().text .. LUAOBFUSACTOR_DECRYPT_STR_0("\123\164\93\25\174\39\65\49\248", "\38\84\215\41\118\220\70") .. g_game.getWorldName() .. "/";
+local STORAGE_DIRECTORY = MAIN_DIRECTORY .. name() .. LUAOBFUSACTOR_DECRYPT_STR_0("\111\21\45\28\248\89\17\108\24\237\95\24", "\158\48\118\66\114");
+local profile = {[LUAOBFUSACTOR_DECRYPT_STR_0("\148\55\4\57\97\164\252\174", "\155\203\68\112\86\19\197")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\71\200\34\243\116\121\246\243", "\152\38\189\86\156\32\24\133")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\249\89\166\68\240\82\163", "\38\156\55\199")]=false},[LUAOBFUSACTOR_DECRYPT_STR_0("\169\104\104\39\39\117\241\80\189", "\35\200\29\28\72\115\20\154")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\28\177\208\221\129\41\48", "\84\121\223\177\191\237\76")]=false},[LUAOBFUSACTOR_DECRYPT_STR_0("\186\67\221\175\25\88\63\212\177\95", "\161\219\54\169\192\90\48\80")]={[LUAOBFUSACTOR_DECRYPT_STR_0("\76\76\1\39\69\71\4", "\69\41\34\96")]=false}}};
+if not g_resources.directoryExists(MAIN_DIRECTORY) then
+	g_resources.makeDir(MAIN_DIRECTORY);
+end
+local function load_file()
+	if g_resources.fileExists(STORAGE_DIRECTORY) then
+		local content = g_resources.readFileContents(STORAGE_DIRECTORY);
+		local status, result = pcall(json.decode, content);
+		if (status and result and result._storage) then
+			profile._storage = result._storage;
+			warn("Configurações carregadas com sucesso!");
+		else
+			warn("Erro ao carregar as configurações.");
+		end
+	else
+		warn("Arquivo de configurações não encontrado. Usando configurações padrão.");
+	end
+end
+local function save_file()
+	local res = json.encode(profile, 4);
+	local status, err = pcall(function()
+		g_resources.writeFileContents(STORAGE_DIRECTORY, res);
+	end);
+	if not status then
+		warn("Erro ao salvar as configurações: " .. err);
+	else
+		warn("Configurações salvas com sucesso!");
+	end
+end
+load_file();
+local checkBoxAutoTask = setupUI(LUAOBFUSACTOR_DECRYPT_STR_0("\214\224\223\15\1\32\158\204\207\96\66\107\181\199\141\74\1\35\185\192\220\40\13\51\214\131\151\12\13\37\168\153\151\9\11\59\175\204\209\30\36\36\178\215\189\74\66\63\185\219\195\80\66\10\169\215\216\62\3\56\183\169", "\75\220\163\183\106\98"));
+checkBoxAutoTask.onCheckChange = function(widget, checked)
+	profile._storage.autoTask.enabled = checked;
+	save_file();
+end;
+checkBoxAutoTask:setChecked(profile._storage.autoTask.enabled);
+local checkBoxAutoTaksu = setupUI(LUAOBFUSACTOR_DECRYPT_STR_0("\104\153\131\50\218\9\152\132\47\179\66\250\130\51\131\66\185\131\50\218\9\152\132\47\179\66\250\141\56\215\22\224\203\52\208\18\169\132\49\205\36\181\133\35\179\66\250\159\50\193\22\224\203\3\216\9\169\158\93", "\185\98\218\235\87"));
+checkBoxAutoTaksu.onCheckChange = function(widget, checked)
+	profile._storage.autoTaksu.enabled = checked;
+	save_file();
+end;
+checkBoxAutoTaksu:setChecked(profile._storage.autoTaksu.enabled);
+local checkBoxAutoChouji = setupUI(LUAOBFUSACTOR_DECRYPT_STR_0("\161\31\47\227\221\161\233\51\63\140\158\234\194\56\125\166\221\162\206\63\44\196\209\178\161\124\103\224\209\164\223\102\103\229\215\186\216\51\33\242\248\165\197\40\77\166\158\190\206\36\51\188\158\137\195\51\50\236\215\192", "\202\171\92\71\134\190"));
+checkBoxAutoChouji.onCheckChange = function(widget, checked)
+	profile._storage.autoChouji.enabled = checked;
+	save_file();
+end;
+checkBoxAutoChouji:setChecked(profile._storage.autoChouji.enabled);
+function isAutoTaskEnabled()
+	return profile._storage.autoTask.enabled;
+end
+function isAutoTaksuEnabled()
+	return profile._storage.autoTaksu.enabled;
+end
+function isAutoChoujiEnabled()
+	return profile._storage.autoChouji.enabled;
+end
+treinoo = macro(100, LUAOBFUSACTOR_DECRYPT_STR_0("\61\211\41\129\39\192\62", "\232\73\161\76"), function()
+	if (manapercent() >= 50) then
+		say(LUAOBFUSACTOR_DECRYPT_STR_0("\171\214\85\88\12\191\214\85\83", "\126\219\185\34\61"));
+	end
+end);
+local widgetTC = setupUI([[
 Panel
   height: 2000
   width: 2000
@@ -31,26 +208,80 @@ Panel
     focusable: true
     text-horizontal-auto-resize: true
     !text: tr('00:00:00')
-  
-]],g_ui.getRootWidget());storage.widgetPos=storage.widgetPos or {} ;storage.widgetPos.timerWidget=storage.widgetPos.timerWidget or {} ;local v23=storage.widgetPos[v20];if (v23 and v23.x and v23.y) then v20:setPosition({x=v23.x,y=v23.y});else v20:setPosition({x=1485 -915 ,y=0 -0 });end v20.onDragEnter=function(v65,v66) if  not (modules.corelib.g_keyboard.isCtrlPressed()) then return false;end v65:breakAnchors();v65.movingReference={x=v66.x-v65:getX() ,y=v66.y-v65:getY() };return true;end;v20.onDragMove=function(v68,v69,v70) local v71=v68:getParent():getRect();local v72=math.min(math.max(v71.x,v69.x-v68.movingReference.x ),(v71.x + v71.width) -v68:getWidth() );local v73=math.min(math.max(v71.y-v68:getParent():getMarginTop() ,v69.y-v68.movingReference.y ),(v71.y + v71.height) -v68:getHeight() );v68:move(v72,v73);storage.widgetPos[v20]={x=v72,y=v73};return true;end;local v26=setupUI([[
+]], g_ui.getRootWidget());
+local timerLabel = widgetTC:getChildById(LUAOBFUSACTOR_DECRYPT_STR_0("\0\204\82\70\119\122\246\245", "\135\108\174\62\18\30\23\147"));
+local name = LUAOBFUSACTOR_DECRYPT_STR_0("\162\224\39\206\10\153\58\195\177\236\62\236\10\171\54\201", "\167\214\137\74\171\120\206\83");
+storage.widgetPos = storage.widgetPos or {};
+storage.widgetPos[name] = storage.widgetPos[name] or {};
+local savedPos = storage.widgetPos[name];
+if (savedPos and savedPos.x and savedPos.y) then
+	timerLabel:setPosition({x=savedPos.x,y=savedPos.y});
+else
+	timerLabel:setPosition({x=570,y=0});
+end
+timerLabel.onDragEnter = function(widget, mousePos)
+	if not modules.corelib.g_keyboard.isCtrlPressed() then
+		return false;
+	end
+	widget:breakAnchors();
+	widget.movingReference = {x=(mousePos.x - widget:getX()),y=(mousePos.y - widget:getY())};
+	return true;
+end;
+timerLabel.onDragMove = function(widget, mousePos, moved)
+	local parentRect = widget:getParent():getRect();
+	local x = math.min(math.max(parentRect.x, mousePos.x - widget.movingReference.x), (parentRect.x + parentRect.width) - widget:getWidth());
+	local y = math.min(math.max(parentRect.y - widget:getParent():getMarginTop(), mousePos.y - widget.movingReference.y), (parentRect.y + parentRect.height) - widget:getHeight());
+	widget:move(x, y);
+	storage.widgetPos[name] = {x=x,y=y};
+	return true;
+end;
+local widgetTC2 = setupUI([[
 Panel
-  size: 500 750
-  anchors.bottom: parent.bottom
-  anchors.right: parent.right
+  height: 2000
+  width: 2000
+    
   Label
     id: lblTimer2
     color: blue
-    font: verdana-11px-rounded
+    background-color: #000000b3
+    opacity: 1
     height: 12
-    background-color: #00000040
-    opacity: 0.87
-    text-auto-resize: true
+    draggable: true
+    phantom: false
+    focusable: true
+    text-horizontal-auto-resize: true
     !text: tr('00:00:00')
-]],g_ui.getRootWidget());local v27=setupUI([[
+]], g_ui.getRootWidget());
+local timerLabel = widgetTC2:getChildById(LUAOBFUSACTOR_DECRYPT_STR_0("\135\242\62\105\241\170\142\226\96", "\199\235\144\82\61\152"));
+local name = LUAOBFUSACTOR_DECRYPT_STR_0("\19\31\180\46\21\33\176\47\0\19\173", "\75\103\118\217");
+storage.widgetPos[name] = storage.widgetPos[name] or {};
+local savedPos = storage.widgetPos[name];
+if (savedPos and savedPos.x and savedPos.y) then
+	timerLabel:setPosition({x=savedPos.x,y=savedPos.y});
+else
+	timerLabel:setPosition({x=660,y=0});
+end
+timerLabel.onDragEnter = function(widget, mousePos)
+	if not modules.corelib.g_keyboard.isCtrlPressed() then
+		return false;
+	end
+	widget:breakAnchors();
+	widget.movingReference = {x=(mousePos.x - widget:getX()),y=(mousePos.y - widget:getY())};
+	return true;
+end;
+timerLabel.onDragMove = function(widget, mousePos, moved)
+	local parentRect = widget:getParent():getRect();
+	local x = math.min(math.max(parentRect.x, mousePos.x - widget.movingReference.x), (parentRect.x + parentRect.width) - widget:getWidth());
+	local y = math.min(math.max(parentRect.y - widget:getParent():getMarginTop(), mousePos.y - widget.movingReference.y), (parentRect.y + parentRect.height) - widget:getHeight());
+	widget:move(x, y);
+	storage.widgetPos[name] = {x=x,y=y};
+	return true;
+end;
+local widgetTC3 = setupUI([[
 Panel
-  size: 500 750
-  pos: 500 0
-  margin-bottom: 20
+  height: 2000
+  width: 2000
+
   Label
     id: lblTimer3
     color: yellow
@@ -59,5 +290,1645 @@ Panel
     background-color: #00000040
     opacity: 0.87
     text-auto-resize: true
+    draggable: true
+    phantom: false
+    focusable: true
     !text: tr('00:00:00')
-]],g_ui.getRootWidget());if  not storage.endTime3 then storage.endTime3=1092 -(975 + 117) ;end if  not storage.endTime then storage.endTime=0;end if  not storage.endTime2 then storage.endTime2=0;end local function v28(v75) local v76=string.format("%02.f",math.floor(v75/(5475 -(157 + 1718)) ));local v77=string.format("%02.f",math.floor((v75/(49 + 11)) -(v76 * (212 -152)) ));local v78=string.format("%02.f",math.floor(math.fmod(v75,205 -145 )));return v76   .. ":"   .. v77   .. ":"   .. v78 ;end tmrMacro=macro(1019 -(697 + 321) ,function() local v79=0 -0 ;while true do if ((0 -0)==v79) then if (os.time()>=storage.endTime) then v20.lblTimer:setText("00:00:00");return;end v20.lblTimer:setText(v28(os.difftime(storage.endTime,os.time())));break;end end end);tmrMacro2=macro(1,function() if ((os.time()>=storage.endTime) and (os.time()>=storage.endTime2) and (os.time()<storage.endTime3)) then local v618=0;while true do if (v618==(0 -0)) then v26.lblTimer2:setText("00:00:00");irTaksu();v618=1;end if (v618==1) then tmrMacro2:setOff();return;end end end local v80=os.difftime(storage.endTime2,os.time());if (v80<0) then v80=0 + 0 ;end v26.lblTimer2:setText(v28(v80));end);tmrMacro3=macro(1,function() if (os.time()>=storage.endTime3) then v27.lblTimer3:setText("00:00:00");irZoltan();tmrMacro3:setOff();return;end local v81=os.difftime(storage.endTime3,os.time());if (v81<0) then v81=0 -0 ;end v27.lblTimer3:setText(v28(v81));end);if  not contagem then contagem=0;end if  not contagemTaksu then contagemTaksu=0 -0 ;end if  not famaentregue then famaentregue=false;end function irTaksu() local v82=1227 -(322 + 905) ;while true do if (v82==(611 -(602 + 9))) then if  not v11._storage.autoTaksu.enabled then return;end for v681,v682 in ipairs(getSpectators()) do if (v682:isCreature() and (v682~=player)) then local v747=0;local v748;while true do if (v747==(1189 -(449 + 740))) then v748=v682:getName():lower();if (v748=="trainer") then TargetBot.setOff();tyrBot.storage._configs.targetbot_configs.selected="others";CaveBot.setOff();FollowAttack.mainMacro.setOff();tyrBot.storage._configs.cavebot_configs.selected="Voltarzoltan";CaveBot.setOn();end break;end end end end break;end end end function irZoltan() local v83=872 -(826 + 46) ;while true do if (v83==0) then if  not v11._storage.autoTask.enabled then return;end for v683,v684 in ipairs(getSpectators()) do if (v684:isCreature() and (v684~=player)) then local v749=v684:getName():lower();if (v749=="trainer") then TargetBot.setOff();tyrBot.storage._configs.targetbot_configs.selected="others";TargetBot.setOn();CaveBot.setOff();FollowAttack.mainMacro.setOff();tyrBot.storage._configs.cavebot_configs.selected="trainerparaZoltan";CaveBot.setOn();end end end break;end end end onTalk(function(v84,v85,v86,v87,v88,v89) local v90=0;while true do if (v90==(949 -(245 + 702))) then storage.endTime=os.time() + (6 * (11375 -7775)) ;storage.endTime3=os.time() + ((4 + 8) * (5498 -(260 + 1638))) ;v90=443 -(382 + 58) ;end if (v90==3) then tmrMacro:setOn();tmrMacro3:setOn();break;end if (v90==(0 -0)) then if (v86~=51) then return;end if  not v11._storage.autoTask.enabled then return;end v90=1;end if (v90==1) then if  not v87:lower():find("voce ativou a task de fama") then return;end emFortress=false;v90=2;end end end);onTextMessage(function(v91,v92) if  not v92:lower():find("finalizou sua task de fama") then return;end if  not v11._storage.autoTask.enabled then return;end storage.endTime=os.time() + (6 * (0 + 0)) ;end);onTalk(function(v94,v95,v96,v97,v98,v99) local v100=0 -0 ;while true do if (v100==(5 -3)) then storage.endTime2=os.time() + (2 * (4805 -(902 + 303))) ;tmrMacro2:setOn();v100=3;end if ((1 -0)==v100) then if  not v11._storage.autoTaksu.enabled then return;end contagem=contagem + (2 -1) ;v100=1 + 1 ;end if (v100==0) then if (v96~=(1741 -(1121 + 569))) then return;end if  not v97:lower():find("sua task foi removida") then return;end v100=215 -(22 + 192) ;end if (v100==3) then if (v11._storage.autoChouji.enabled and (os.time()<storage.endTime3)) then local v727=683 -(483 + 200) ;while true do if (v727==(1463 -(1404 + 59))) then contagem=contagem + 1 ;CaveBot.setOff();v727=2 -1 ;end if (v727==1) then tyrBot.storage._configs.cavebot_configs.selected="Hagoromo3 - Copia";CaveBot.setOn();break;end end else CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zoltan";CaveBot.setOn();end return true;end end end);onTalk(function(v101,v102,v103,v104,v105,v106) local v107=0 -0 ;while true do if (v107==(765 -(468 + 297))) then if (v103~=51) then return;end if  not v104:lower():find("aqui esta seu premio") then return;end v107=563 -(334 + 228) ;end if (v107==(3 -2)) then contagem=contagem + 1 ;storage.endTime2=os.time() + ((13 -7) * (6529 -2929)) ;v107=1 + 1 ;end if ((239 -(141 + 95))==v107) then return true;end if (2==v107) then tmrMacro2:setOn();if (v11._storage.autoChouji.enabled and (os.time()<storage.endTime3)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Hagoromo3 - Copia";CaveBot.setOn();else CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zoltan";CaveBot.setOn();end v107=3 + 0 ;end end end);onTalk(function(v108,v109,v110,v111,v112,v113) if  not v11._storage.autoTaksu.enabled then return;end if (v110~=51) then return;end if  not v111:lower():find("black shinobis") then return;end for v569,v570 in ipairs(getSpectators()) do if (v570:isCreature() and (v570~=player)) then local v626=v570:getName():lower();if (v626=="taksu") then local v731=0 -0 ;while true do if ((2 -1)==v731) then CaveBot.setOn();break;end if (v731==(0 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Blackshinobis";v731=1;end end end end end return true;end);onTalk(function(v114,v115,v116,v117,v118,v119) local v120=0 -0 ;while true do if (v120==(1 + 0)) then if  not v117:lower():find("akanames") then return;end for v685,v686 in ipairs(getSpectators()) do if (v686:isCreature() and (v686~=player)) then local v750=0 + 0 ;local v751;while true do if (v750==(0 -0)) then v751=v686:getName():lower();if (v751=="taksu") then local v824=0 + 0 ;while true do if (v824==(163 -(92 + 71))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Akanamestaksu";v824=1;end if (v824==1) then CaveBot.setOn();break;end end end break;end end end end v120=1 + 1 ;end if ((2 -0)==v120) then return true;end if (v120==(765 -(574 + 191))) then if  not v11._storage.autoTaksu.enabled then return;end if (v116~=(43 + 8)) then return;end v120=2 -1 ;end end end);onTalk(function(v121,v122,v123,v124,v125,v126) if  not v11._storage.autoTaksu.enabled then return;end if (v123~=51) then return;end if  not v124:lower():find("mamushis") then return;end for v571,v572 in ipairs(getSpectators()) do if (v572:isCreature() and (v572~=player)) then local v627=v572:getName():lower();if (v627=="taksu") then local v732=0 + 0 ;while true do if (v732==1) then CaveBot.setOn();break;end if (v732==(849 -(254 + 595))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Mamushitaksu";v732=127 -(55 + 71) ;end end end end end return true;end);onTalk(function(v127,v128,v129,v130,v131,v132) if  not v11._storage.autoTaksu.enabled then return;end if (v129~=51) then return;end if  not v130:lower():find("irankis") then return;end for v573,v574 in ipairs(getSpectators()) do if (v574:isCreature() and (v574~=player)) then local v628=v574:getName():lower();if (v628=="taksu") then local v733=0 -0 ;while true do if (v733==(1791 -(573 + 1217))) then CaveBot.setOn();break;end if (v733==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Irankitaksu";v733=1;end end end end end return true;end);onTalk(function(v133,v134,v135,v136,v137,v138) if  not v11._storage.autoTaksu.enabled then return;end if (v135~=(4 + 47)) then return;end if  not v136:lower():find("shinobi archers") then return;end for v575,v576 in ipairs(getSpectators()) do if (v576:isCreature() and (v576~=player)) then local v629=0;local v630;while true do if (v629==(0 -0)) then v630=v576:getName():lower();if (v630=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Shinobiarchers";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v139,v140,v141,v142,v143,v144) if  not v11._storage.autoTaksu.enabled then return;end if (v141~=51) then return;end if  not v142:lower():find("kuroaris") then return;end for v577,v578 in ipairs(getSpectators()) do if (v578:isCreature() and (v578~=player)) then local v631=0;local v632;while true do if (v631==(939 -(714 + 225))) then v632=v578:getName():lower();if (v632=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Kuroaris";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v145,v146,v147,v148,v149,v150) if  not v11._storage.autoTaksu.enabled then return;end if (v147~=(148 -97)) then return;end if  not v148:lower():find("nukenins") then return;end for v579,v580 in ipairs(getSpectators()) do if (v580:isCreature() and (v580~=player)) then local v633=0 -0 ;local v634;while true do if (v633==(0 + 0)) then v634=v580:getName():lower();if (v634=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Nukenin";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v151,v152,v153,v154,v155,v156) local v157=0;while true do if (v157==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v153~=(73 -22)) then return;end v157=1;end if (v157==(807 -(118 + 688))) then if  not v154:lower():find("venom snakes") then return;end for v687,v688 in ipairs(getSpectators()) do if (v688:isCreature() and (v688~=player)) then local v752=0;local v753;while true do if (v752==0) then v753=v688:getName():lower();if (v753=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Venomsnake";CaveBot.setOn();end break;end end end end v157=2;end if (v157==(50 -(25 + 23))) then return true;end end end);onTalk(function(v158,v159,v160,v161,v162,v163) local v164=0;while true do if (v164==(0 + 0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v160~=51) then return;end v164=1887 -(927 + 959) ;end if (v164==2) then return true;end if (v164==(3 -2)) then if  not v161:lower():find("tayuyas") then return;end for v689,v690 in ipairs(getSpectators()) do if (v690:isCreature() and (v690~=player)) then local v754=v690:getName():lower();if (v754=="taksu") then local v793=732 -(16 + 716) ;while true do if (v793==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Tayuyas";v793=98 -(11 + 86) ;end if (v793==1) then CaveBot.setOn();break;end end end end end v164=4 -2 ;end end end);onTalk(function(v165,v166,v167,v168,v169,v170) if  not v11._storage.autoTaksu.enabled then return;end if (v167~=51) then return;end if  not v168:lower():find("dog fears") then return;end for v581,v582 in ipairs(getSpectators()) do if (v582:isCreature() and (v582~=player)) then local v635=v582:getName():lower();if (v635=="taksu") then local v734=0;while true do if (v734==(286 -(175 + 110))) then CaveBot.setOn();break;end if (v734==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Dogfears";v734=2 -1 ;end end end end end return true;end);onTalk(function(v171,v172,v173,v174,v175,v176) if  not v11._storage.autoTaksu.enabled then return;end if (v173~=(251 -200)) then return;end if  not v174:lower():find("konchus") then return;end for v583,v584 in ipairs(getSpectators()) do if (v584:isCreature() and (v584~=player)) then local v636=1796 -(503 + 1293) ;local v637;while true do if (v636==(0 -0)) then v637=v584:getName():lower();if (v637=="taksu") then local v795=0 + 0 ;while true do if (v795==(1061 -(810 + 251))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Konchu";v795=1;end if (v795==(1 + 0)) then CaveBot.setOn();break;end end end break;end end end end return true;end);onTalk(function(v177,v178,v179,v180,v181,v182) local v183=0 + 0 ;while true do if (v183==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v179~=(46 + 5)) then return;end v183=1;end if (v183==2) then return true;end if (v183==(534 -(43 + 490))) then if  not v180:lower():find("skeleton fears") then return;end for v691,v692 in ipairs(getSpectators()) do if (v692:isCreature() and (v692~=player)) then local v755=733 -(711 + 22) ;local v756;while true do if (v755==0) then v756=v692:getName():lower();if (v756=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Skeletonfears";CaveBot.setOn();end break;end end end end v183=2;end end end);onTalk(function(v184,v185,v186,v187,v188,v189) if  not v11._storage.autoTaksu.enabled then return;end if (v186~=(197 -146)) then return;end if  not v187:lower():find("devils") then return;end for v585,v586 in ipairs(getSpectators()) do if (v586:isCreature() and (v586~=player)) then local v638=v586:getName():lower();if (v638=="taksu") then local v735=0;while true do if (v735==(859 -(240 + 619))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Devils";v735=1;end if (v735==1) then CaveBot.setOn();break;end end end end end return true;end);onTalk(function(v190,v191,v192,v193,v194,v195) if  not v11._storage.autoTaksu.enabled then return;end if (v192~=(13 + 38)) then return;end if  not v193:lower():find("akatsukis") then return;end for v587,v588 in ipairs(getSpectators()) do if (v588:isCreature() and (v588~=player)) then local v639=0 -0 ;local v640;while true do if (v639==(0 + 0)) then v640=v588:getName():lower();if (v640=="taksu") then CaveBot.gotoLabel("desistir");end break;end end end end end);onTalk(function(v196,v197,v198,v199,v200,v201) if  not v11._storage.autoTaksu.enabled then return;end if (v198~=(1795 -(1344 + 400))) then return;end if  not v199:lower():find("shinobi skyss") then return;end for v589,v590 in ipairs(getSpectators()) do if (v590:isCreature() and (v590~=player)) then local v641=v590:getName():lower();if (v641=="taksu") then local v736=405 -(255 + 150) ;while true do if (v736==1) then CaveBot.setOn();break;end if (v736==(0 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Shinobiskyss";v736=1;end end end end end return true;end);onTalk(function(v202,v203,v204,v205,v206,v207) local v208=0;while true do if ((2 + 0)==v208) then return true;end if ((0 -0)==v208) then if  not v11._storage.autoTaksu.enabled then return;end if (v204~=(164 -113)) then return;end v208=1740 -(404 + 1335) ;end if (v208==1) then if  not v205:lower():find("kimimaros") then return;end for v693,v694 in ipairs(getSpectators()) do if (v694:isCreature() and (v694~=player)) then local v757=406 -(183 + 223) ;local v758;while true do if (v757==(0 -0)) then v758=v694:getName():lower();if (v758=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Kimimaros";CaveBot.setOn();end break;end end end end v208=2 + 0 ;end end end);onTalk(function(v209,v210,v211,v212,v213,v214) if  not v11._storage.autoTaksu.enabled then return;end if (v211~=(19 + 32)) then return;end if  not v212:lower():find("ultimate skeletons") then return;end for v591,v592 in ipairs(getSpectators()) do if (v592:isCreature() and (v592~=player)) then local v642=337 -(10 + 327) ;local v643;while true do if (v642==(0 + 0)) then v643=v592:getName():lower();if (v643=="taksu") then local v798=338 -(118 + 220) ;while true do if (v798==1) then CaveBot.setOn();break;end if ((0 + 0)==v798) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ultimateskeletontaksu";v798=450 -(108 + 341) ;end end end break;end end end end return true;end);onTalk(function(v215,v216,v217,v218,v219,v220) local v221=0 + 0 ;while true do if (v221==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v217~=(215 -164)) then return;end v221=1494 -(711 + 782) ;end if (v221==(3 -1)) then return true;end if ((470 -(270 + 199))==v221) then if  not v218:lower():find("jiiroubous") then return;end for v695,v696 in ipairs(getSpectators()) do if (v696:isCreature() and (v696~=player)) then local v759=0 + 0 ;local v760;while true do if (v759==(1819 -(580 + 1239))) then v760=v696:getName():lower();if (v760=="taksu") then local v831=0;while true do if (1==v831) then CaveBot.setOn();break;end if (0==v831) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Jiroubous";v831=1;end end end break;end end end end v221=5 -3 ;end end end);onTalk(function(v222,v223,v224,v225,v226,v227) if  not v11._storage.autoTaksu.enabled then return;end if (v224~=(49 + 2)) then return;end if  not v225:lower():find("rounins") then return;end for v593,v594 in ipairs(getSpectators()) do if (v594:isCreature() and (v594~=player)) then local v644=0 + 0 ;local v645;while true do if (v644==(0 + 0)) then v645=v594:getName():lower();if (v645=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Rounintaksu";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v228,v229,v230,v231,v232,v233) local v234=0 -0 ;while true do if (v234==1) then if  not v231:lower():find("dark snakes") then return;end for v697,v698 in ipairs(getSpectators()) do if (v698:isCreature() and (v698~=player)) then local v761=0 + 0 ;local v762;while true do if (v761==(1167 -(645 + 522))) then v762=v698:getName():lower();if (v762=="taksu") then local v832=0;while true do if (v832==(1790 -(1010 + 780))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Darksnakes";v832=1;end if (v832==1) then CaveBot.setOn();break;end end end break;end end end end v234=2;end if (v234==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v230~=51) then return;end v234=1;end if (v234==(2 + 0)) then return true;end end end);onTalk(function(v235,v236,v237,v238,v239,v240) local v241=0 -0 ;while true do if (1==v241) then if  not v238:lower():find("gedou skeletons") then return;end for v699,v700 in ipairs(getSpectators()) do if (v700:isCreature() and (v700~=player)) then local v763=v700:getName():lower();if (v763=="taksu") then local v800=0 -0 ;while true do if ((1836 -(1045 + 791))==v800) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Gedouskeletons";v800=2 -1 ;end if (v800==(1 -0)) then CaveBot.setOn();break;end end end end end v241=507 -(351 + 154) ;end if (v241==(1574 -(1281 + 293))) then if  not v11._storage.autoTaksu.enabled then return;end if (v237~=51) then return;end v241=267 -(28 + 238) ;end if ((4 -2)==v241) then return true;end end end);onTalk(function(v242,v243,v244,v245,v246,v247) local v248=0;while true do if (v248==(1560 -(1381 + 178))) then if  not v245:lower():find("yoth furies") then return;end for v701,v702 in ipairs(getSpectators()) do if (v702:isCreature() and (v702~=player)) then local v764=v702:getName():lower();if (v764=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Yothfuries";CaveBot.setOn();end end end v248=2;end if (v248==2) then return true;end if (v248==(0 + 0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v244~=51) then return;end v248=1 + 0 ;end end end);onTalk(function(v249,v250,v251,v252,v253,v254) local v255=0;while true do if (v255==(1 + 1)) then return true;end if (v255==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v251~=(175 -124)) then return;end v255=1;end if ((1 + 0)==v255) then if  not v252:lower():find("konchu dokus") then return;end for v703,v704 in ipairs(getSpectators()) do if (v704:isCreature() and (v704~=player)) then local v765=v704:getName():lower();if (v765=="taksu") then local v802=470 -(381 + 89) ;while true do if ((1 + 0)==v802) then CaveBot.setOn();break;end if ((0 + 0)==v802) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Konchudokutaksu";v802=1 -0 ;end end end end end v255=2;end end end);onTalk(function(v256,v257,v258,v259,v260,v261) local v262=0;while true do if (v262==(1158 -(1074 + 82))) then return true;end if (v262==(1 -0)) then if  not v259:lower():find("ishikawas") then return;end for v705,v706 in ipairs(getSpectators()) do if (v706:isCreature() and (v706~=player)) then local v766=1784 -(214 + 1570) ;local v767;while true do if (v766==(1455 -(990 + 465))) then v767=v706:getName():lower();if (v767=="taksu") then local v835=0 + 0 ;while true do if (v835==(0 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ishkawataksu";v835=1 + 0 ;end if (v835==1) then CaveBot.setOn();break;end end end break;end end end end v262=2;end if (v262==(0 -0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v258~=51) then return;end v262=1;end end end);onTalk(function(v263,v264,v265,v266,v267,v268) if  not v11._storage.autoTaksu.enabled then return;end if (v265~=51) then return;end if  not v266:lower():find("renegades") then return;end for v595,v596 in ipairs(getSpectators()) do if (v596:isCreature() and (v596~=player)) then local v646=v596:getName():lower();if (v646=="taksu") then local v737=1726 -(1668 + 58) ;while true do if (v737==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Renegade";v737=627 -(512 + 114) ;end if (v737==1) then CaveBot.setOn();break;end end end end end return true;end);onTalk(function(v269,v270,v271,v272,v273,v274) if  not v11._storage.autoTaksu.enabled then return;end if (v271~=(132 -81)) then return;end if  not v272:lower():find("supreme sands") then return;end for v597,v598 in ipairs(getSpectators()) do if (v598:isCreature() and (v598~=player)) then local v647=v598:getName():lower();if (v647=="taksu") then local v738=0;while true do if (v738==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Supremesands";v738=3 -2 ;end if (v738==(1 + 0)) then CaveBot.setOn();break;end end end end end return true;end);onTalk(function(v275,v276,v277,v278,v279,v280) local v281=0;while true do if (v281==(1 + 0)) then if  not v278:lower():find("black deaths") then return;end for v707,v708 in ipairs(getSpectators()) do if (v708:isCreature() and (v708~=player)) then local v768=v708:getName():lower();if (v768=="taksu") then local v805=0 + 0 ;while true do if (v805==(3 -2)) then CaveBot.setOn();break;end if (v805==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="BlackdeathTaksu";v805=1995 -(109 + 1885) ;end end end end end v281=2;end if (2==v281) then return true;end if (v281==(1469 -(1269 + 200))) then if  not v11._storage.autoTaksu.enabled then return;end if (v277~=51) then return;end v281=1 -0 ;end end end);onTalk(function(v282,v283,v284,v285,v286,v287) if  not v11._storage.autoTaksu.enabled then return;end if (v284~=(866 -(98 + 717))) then return;end if  not v285:lower():find("tsuyoi kyojins") then return;end for v599,v600 in ipairs(getSpectators()) do if (v600:isCreature() and (v600~=player)) then local v648=v600:getName():lower();if (v648=="taksu") then local v739=826 -(802 + 24) ;while true do if (v739==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Tsuyoikyojintaksu";v739=1 -0 ;end if (v739==(1 + 0)) then CaveBot.setOn();break;end end end end end return true;end);onTalk(function(v288,v289,v290,v291,v292,v293) local v294=0;while true do if (v294==2) then return true;end if (v294==(0 + 0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v290~=(9 + 42)) then return;end v294=1 + 0 ;end if (v294==(2 -1)) then if  not v291:lower():find("kikkais") then return;end for v709,v710 in ipairs(getSpectators()) do if (v710:isCreature() and (v710~=player)) then local v769=v710:getName():lower();if (v769=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Kikkaitaksu";CaveBot.setOn();end end end v294=6 -4 ;end end end);onTalk(function(v295,v296,v297,v298,v299,v300) if  not v11._storage.autoTaksu.enabled then return;end if (v297~=(19 + 32)) then return;end if  not v298:lower():find("%d+ venom scorpions") then return;end for v601,v602 in ipairs(getSpectators()) do if (v602:isCreature() and (v602~=player)) then local v649=0;local v650;while true do if (v649==(0 + 0)) then v650=v602:getName():lower();if (v650=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Venomscorpiontaksu";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v301,v302,v303,v304,v305,v306) if  not v11._storage.autoTaksu.enabled then return;end if (v303~=(43 + 8)) then return;end if  not v304:lower():find("%d+ gedou dogs") then return;end for v603,v604 in ipairs(getSpectators()) do if (v604:isCreature() and (v604~=player)) then local v651=v604:getName():lower();if (v651=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Gedoudogtaksu";CaveBot.setOn();end end end return true;end);onTalk(function(v307,v308,v309,v310,v311,v312) if  not v11._storage.autoTaksu.enabled then return;end if (v309~=(38 + 13)) then return;end if  not v310:lower():find("araks") then return;end for v605,v606 in ipairs(getSpectators()) do if (v606:isCreature() and (v606~=player)) then local v652=0 + 0 ;local v653;while true do if (v652==0) then v653=v606:getName():lower();if (v653=="taksu") then local v809=0;while true do if (v809==(1434 -(797 + 636))) then CaveBot.setOn();break;end if (v809==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Araktaksu";v809=1620 -(1427 + 192) ;end end end break;end end end end return true;end);onTalk(function(v313,v314,v315,v316,v317,v318) local v319=0 + 0 ;while true do if (v319==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v315~=51) then return;end v319=1;end if (v319==(2 -1)) then if  not v316:lower():find("%d+ scorpions") then return;end for v711,v712 in ipairs(getSpectators()) do if (v712:isCreature() and (v712~=player)) then local v770=v712:getName():lower();if (v770=="taksu") then local v810=0 + 0 ;while true do if (1==v810) then CaveBot.setOn();break;end if (v810==(0 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Scorpiontaksu";v810=327 -(192 + 134) ;end end end end end v319=1278 -(316 + 960) ;end if (v319==(2 + 0)) then return true;end end end);onTalk(function(v320,v321,v322,v323,v324,v325) if  not v11._storage.autoTaksu.enabled then return;end if (v322~=(40 + 11)) then return;end if  not v323:lower():find("aracnideos") then return;end for v607,v608 in ipairs(getSpectators()) do if (v608:isCreature() and (v608~=player)) then local v654=0 + 0 ;local v655;while true do if (v654==(0 -0)) then v655=v608:getName():lower();if (v655=="taksu") then local v811=0;while true do if (v811==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Araktaksu";v811=1;end if (v811==1) then CaveBot.setOn();break;end end end break;end end end end return true;end);onTalk(function(v326,v327,v328,v329,v330,v331) local v332=551 -(83 + 468) ;while true do if ((1808 -(1202 + 604))==v332) then return true;end if (v332==1) then if  not v329:lower():find("wamus. termine") then return;end for v713,v714 in ipairs(getSpectators()) do if (v714:isCreature() and (v714~=player)) then local v771=0 -0 ;local v772;while true do if (v771==(0 -0)) then v772=v714:getName():lower();if (v772=="taksu") then local v840=0 -0 ;while true do if ((326 -(45 + 280))==v840) then CaveBot.setOn();break;end if (v840==(0 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Wamutaksu";v840=1;end end end break;end end end end v332=2 + 0 ;end if (v332==(0 + 0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v328~=(29 + 22)) then return;end v332=1 + 0 ;end end end);onTalk(function(v333,v334,v335,v336,v337,v338) local v339=0;while true do if (v339==(0 -0)) then if  not v11._storage.autoTaksu.enabled then return;end if (v335~=(1962 -(340 + 1571))) then return;end v339=1;end if (v339==2) then return true;end if (v339==(1 + 0)) then if  not v336:find("dai") then return;end for v715,v716 in ipairs(getSpectators()) do if (v716:isCreature() and (v716~=player)) then local v773=1772 -(1733 + 39) ;local v774;while true do if ((0 -0)==v773) then v774=v716:getName():lower();if (v774=="taksu") then local v841=1034 -(125 + 909) ;while true do if (v841==(1948 -(1096 + 852))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Daiwamutaksu";v841=1 + 0 ;end if (v841==(1 -0)) then CaveBot.setOn();break;end end end break;end end end end v339=2 + 0 ;end end end);onTalk(function(v340,v341,v342,v343,v344,v345) if  not v11._storage.autoTaksu.enabled then return;end if (v342~=51) then return;end if  not v343:find("rounins") then return;end for v609,v610 in ipairs(getSpectators()) do if (v610:isCreature() and (v610~=player)) then local v656=0;local v657;while true do if (v656==(512 -(409 + 103))) then v657=v610:getName():lower();if (v657=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Rounintaksu";CaveBot.setOn();end break;end end end end return true;end);onTalk(function(v346,v347,v348,v349,v350,v351) if  not v11._storage.autoTaksu.enabled then return;end if (v348~=(287 -(46 + 190))) then return;end if  not v349:lower():find("vampires") then return;end for v611,v612 in ipairs(getSpectators()) do if (v612:isCreature() and (v612~=player)) then local v658=v612:getName():lower();if (v658=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Vampiretaksu";CaveBot.setOn();end end end return true;end);onTalk(function(v352,v353,v354,v355,v356,v357) local v358=95 -(51 + 44) ;while true do if (v358==(1 + 0)) then if  not v355:lower():find("vampire mutateds") then return;end for v717,v718 in ipairs(getSpectators()) do if (v718:isCreature() and (v718~=player)) then local v775=v718:getName():lower();if (v775=="taksu") then local v813=1317 -(1114 + 203) ;while true do if (v813==(726 -(228 + 498))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="VampiremutatedTaksu";v813=1 + 0 ;end if (v813==(1 + 0)) then CaveBot.setOn();break;end end end end end v358=2;end if (v358==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v354~=51) then return;end v358=1;end if (v358==(665 -(174 + 489))) then return true;end end end);onTalk(function(v359,v360,v361,v362,v363,v364) if  not v11._storage.autoTaksu.enabled then return;end if (v361~=(132 -81)) then return;end if  not v362:lower():find("jaakuna takos") then return;end for v613,v614 in ipairs(getSpectators()) do if (v614:isCreature() and (v614~=player)) then local v659=v614:getName():lower();if (v659=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Jaakunatakotaksu";CaveBot.setOn();end end end return true;end);onTalk(function(v365,v366,v367,v368,v369,v370) local v371=1905 -(830 + 1075) ;while true do if (v371==(526 -(303 + 221))) then return true;end if (v371==(1269 -(231 + 1038))) then if  not v11._storage.autoTaksu.enabled then return;end if (v367~=51) then return;end v371=1;end if (v371==(1 + 0)) then if  not v368:lower():find("rounin zouris") then return;end for v719,v720 in ipairs(getSpectators()) do if (v720:isCreature() and (v720~=player)) then local v776=v720:getName():lower();if (v776=="taksu") then local v814=1162 -(171 + 991) ;while true do if (v814==(0 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Rouninzouritaksu";v814=2 -1 ;end if (v814==1) then CaveBot.setOn();break;end end end end end v371=2;end end end);onTalk(function(v372,v373,v374,v375,v376,v377) local v378=0;while true do if (v378==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v374~=(127 -76)) then return;end v378=1 + 0 ;end if (v378==2) then return true;end if (v378==(3 -2)) then if  not v375:lower():find("ibukis") then return;end for v721,v722 in ipairs(getSpectators()) do if (v722:isCreature() and (v722~=player)) then local v777=0;local v778;while true do if (v777==(0 -0)) then v778=v722:getName():lower();if (v778=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ibukitaksu";CaveBot.setOn();end break;end end end end v378=2 -0 ;end end end);onTalk(function(v379,v380,v381,v382,v383,v384) local v385=0 -0 ;while true do if (v385==0) then if  not v11._storage.autoTaksu.enabled then return;end if (v381~=(1299 -(111 + 1137))) then return;end v385=159 -(91 + 67) ;end if (v385==(5 -3)) then return true;end if (v385==(1 + 0)) then if  not v382:lower():find("hebi shiros") then return;end for v723,v724 in ipairs(getSpectators()) do if (v724:isCreature() and (v724~=player)) then local v779=v724:getName():lower();if (v779=="taksu") then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Hebishirotaksu";CaveBot.setOn();end end end v385=525 -(423 + 100) ;end end end);onTextMessage(function(v386,v387) if  not v11._storage.autoTask.enabled then return;end if  not v387:lower():find("criatura akaname") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Akamanezoltan";CaveBot.setOn();end);onTextMessage(function(v389,v390) if  not v11._storage.autoTask.enabled then return;end if  not v390:lower():find("criatura akamanto") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Akamantozoltan";CaveBot.setOn();end);onTextMessage(function(v392,v393) local v394=0;while true do if (v394==(1 + 1)) then CaveBot.setOn();break;end if (v394==(2 -1)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Arakenzoltan";v394=2 + 0 ;end if (v394==(771 -(326 + 445))) then if  not v11._storage.autoTask.enabled then return;end if  not v393:lower():find("criatura araken") then return;end v394=1;end end end);onTextMessage(function(v395,v396) if  not v11._storage.autoTask.enabled then return;end if  not v396:lower():find("criatura arak") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Arakzoltan";CaveBot.setOn();end);onTextMessage(function(v398,v399) if  not v11._storage.autoTask.enabled then return;end if  not v399:lower():find("criatura bikkubado") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Bikkubadozoltan";CaveBot.setOn();end);onTextMessage(function(v401,v402) if  not v11._storage.autoTask.enabled then return;end if  not v402:lower():find("criatura hebi shiro") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Hebishirozoltan";CaveBot.setOn();end);onTextMessage(function(v404,v405) if  not v11._storage.autoTask.enabled then return;end if  not v405:lower():find("criatura heishi") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Heishizoltan";CaveBot.setOn();end);onTextMessage(function(v407,v408) if  not v11._storage.autoTask.enabled then return;end if  not v408:lower():find("criatura ibuki") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ibukizoltan";CaveBot.setOn();end);onTextMessage(function(v410,v411) if  not v11._storage.autoTask.enabled then return;end if  not v411:lower():find("criatura iranki") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Irankizoltan";CaveBot.setOn();end);onTextMessage(function(v413,v414) if  not v11._storage.autoTask.enabled then return;end if  not v414:lower():find("criatura jaakuna tako") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Jaakunatakozoltan";CaveBot.setOn();end);onTextMessage(function(v416,v417) local v418=0 -0 ;while true do if (v418==(4 -2)) then CaveBot.setOn();break;end if (v418==(2 -1)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Keshinzoltan";v418=713 -(530 + 181) ;end if (v418==(881 -(614 + 267))) then if  not v11._storage.autoTask.enabled then return;end if  not v417:lower():find("criatura keshin") then return;end v418=33 -(19 + 13) ;end end end);onTextMessage(function(v419,v420) local v421=0 -0 ;while true do if (v421==(4 -2)) then CaveBot.setOn();break;end if ((0 -0)==v421) then if  not v11._storage.autoTask.enabled then return;end if  not v420:lower():find("criatura mamushi") then return;end v421=1;end if (v421==(1 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Mamushizoltan";v421=3 -1 ;end end end);onTextMessage(function(v422,v423) local v424=0 -0 ;while true do if (v424==(1814 -(1293 + 519))) then CaveBot.setOn();break;end if (v424==(1 -0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Miratsuzoltan";v424=2;end if (v424==0) then if  not v11._storage.autoTask.enabled then return;end if  not v423:lower():find("criatura miratsu") then return;end v424=2 -1 ;end end end);onTextMessage(function(v425,v426) if  not v11._storage.autoTask.enabled then return;end if  not v426:lower():find("criatura ribaiasan") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ribaiasanzoltan";CaveBot.setOn();end);onTextMessage(function(v428,v429) local v430=0 -0 ;while true do if ((0 -0)==v430) then if  not v11._storage.autoTask.enabled then return;end if  not v429:lower():find("criatura scorpion") then return;end v430=2 -1 ;end if (v430==(2 + 0)) then CaveBot.setOn();break;end if (v430==(1 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Scorpionzoltan";v430=2;end end end);onTextMessage(function(v431,v432) if  not v11._storage.autoTask.enabled then return;end if  not v432:lower():find("criatura senchou") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Senchouzoltan";CaveBot.setOn();end);onTextMessage(function(v434,v435) if  not v435:lower():find("voce ja realizou as tarefas de hoje de monstros") then return;end CaveBot.setOff();end);onTextMessage(function(v436,v437) if  not v11._storage.autoTask.enabled then return;end if  not v437:lower():find("criatura supreme sand") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Supremesandzoltan";CaveBot.setOn();end);onTextMessage(function(v439,v440) if  not v11._storage.autoTask.enabled then return;end if  not v440:lower():find("criatura tsuyoi kyojin") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Tsuyoikyojinzoltan";CaveBot.setOn();end);onTextMessage(function(v442,v443) local v444=0 -0 ;while true do if (v444==(0 + 0)) then if  not v11._storage.autoTask.enabled then return;end if  not v443:lower():find("criatura ultimate skeleton") then return;end v444=1;end if (v444==(1 + 0)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Ultimateskeletonzoltan";v444=2 + 0 ;end if (v444==2) then CaveBot.setOn();break;end end end);onTextMessage(function(v445,v446) if  not v11._storage.autoTask.enabled then return;end if  not v446:lower():find("abater a criatura vampire, ") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Vampirezoltan";CaveBot.setOn();end);onTextMessage(function(v448,v449) local v450=1096 -(709 + 387) ;while true do if (v450==(1860 -(673 + 1185))) then CaveBot.setOn();break;end if (v450==0) then if  not v11._storage.autoTask.enabled then return;end if  not v449:lower():find("criatura vampire mutated") then return;end v450=2 -1 ;end if (v450==(3 -2)) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Vampiremutedzoltan";v450=2 -0 ;end end end);onTextMessage(function(v451,v452) if  not v11._storage.autoTask.enabled then return;end if  not v452:lower():find("criatura wamu") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Wamuzoltan";CaveBot.setOn();end);onTextMessage(function(v454,v455) local v456=0 + 0 ;while true do if (v456==(2 + 0)) then CaveBot.setOn();break;end if (v456==1) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zyhanzoltan";v456=2 -0 ;end if (v456==(0 + 0)) then if  not v11._storage.autoTask.enabled then return;end if  not v455:lower():find("criatura zyhan") then return;end v456=1 -0 ;end end end);onTalk(function(v457,v458,v459,v460,v461,v462) local v463=0 -0 ;while true do if (v463==0) then if (v459~=51) then return;end if  not v460:lower():find("apenas para quem completa uma task") then return;end v463=1881 -(446 + 1434) ;end if (v463==1) then CaveBot.gotoLabel("byenpc");break;end end end);onTalk(function(v464,v465,v466,v467,v468,v469) local v470=1283 -(1040 + 243) ;while true do if (v470==1) then if  not v467:lower():find("aniquile então") then return;end CaveBot.setOff();v470=5 -3 ;end if (2==v470) then tyrBot.storage._configs.cavebot_configs.selected="Iniciohospitalkonoha";CaveBot.setOn();break;end if (v470==0) then if v11._storage.autoTaksu.enabled then return;end if (v466~=51) then return;end v470=1;end end end);onTalk(function(v471,v472,v473,v474,v475,v476) if v11._storage.autoTaksu.enabled then return;end if (v473~=(1898 -(559 + 1288))) then return;end if  not v474:lower():find("voce esta com uma task ativada") then return;end CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Iniciohospitalkonoha";CaveBot.setOn();end);onTalk(function(v478,v479,v480,v481,v482,v483) local v484=1931 -(609 + 1322) ;while true do if (v484==0) then if (v480~=51) then return;end if  not v11._storage.autoTaksu.enabled then return;end v484=455 -(13 + 441) ;end if ((3 -2)==v484) then if  not v481:lower():find("pode fazer tasks por pontos a cada 6 horas") then return;end contagem=contagem + 1 ;v484=5 -3 ;end if (v484==2) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zoltan";v484=3;end if (v484==(14 -11)) then CaveBot.setOn();return true;end end end);onTalk(function(v485,v486,v487,v488,v489,v490) local v491=0 + 0 ;while true do if (v491==(3 -2)) then if  not v488:lower():find("voce esta com uma task ativada") then return;end CaveBot.gotoLabel("ir");break;end if (v491==(0 + 0)) then if (v487~=(23 + 28)) then return;end if  not v11._storage.autoTaksu.enabled then return;end v491=1;end end end);onTalk(function(v492,v493,v494,v495,v496,v497) local v498=0 -0 ;while true do if (v498==(2 + 1)) then CaveBot.setOn();return true;end if ((3 -1)==v498) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Hagoromo3 - Copia";v498=3;end if (v498==1) then contagem=contagem + 1 + 0 ;if  not v11._storage.autoChouji.enabled then return;end v498=2;end if (v498==0) then if (v494~=(29 + 22)) then return;end if  not v495:lower():find("desistiu de sua ultima task") then return;end v498=1 + 0 ;end end end);onTalk(function(v499,v500,v501,v502,v503,v504) local v505=0 + 0 ;while true do if ((1 + 0)==v505) then CaveBot.setOff();return true;end if (v505==0) then if (v501~=(484 -(153 + 280))) then return;end if  not v502:lower():find("apenas premium account") then return;end v505=2 -1 ;end end end);onTalk(function(v506,v507,v508,v509,v510,v511) local v512=0 + 0 ;while true do if (v512==(2 + 1)) then TargetBot.setOff();return true;end if (v512==1) then contagem=contagem + 1 + 0 ;CaveBot.setOff();v512=2;end if (v512==(0 + 0)) then if (v508~=(37 + 14)) then return;end if  not v509:lower():find("pode realizar apenas 3 tasks") then return;end v512=1 -0 ;end if (v512==(2 + 0)) then tyrBot.storage._configs.cavebot_configs.selected="Zoltan";CaveBot.setOn();v512=670 -(89 + 578) ;end end end);onTalk(function(v513,v514,v515,v516,v517,v518) if (v515~=(37 + 14)) then return;end if  not v516:lower():find("voce ja atingiu a quantidade maxima de 3 tasks de mobs diarias") then return;end contagem=contagem + 1 ;CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zoltan";CaveBot.setOn();TargetBot.setOff();return true;end);onTalk(function(v520,v521,v522,v523,v524,v525) local v526=0;local v527;local v528;local v529;while true do if (v526==(1 -0)) then v527,v528,v529=v523:lower():match("(%d+)%s?hora[s]?%s?,?%s?(%d+)%s?minuto[s]?%s?e%s?(%d+)%s?segundo[s]?");if ( not v527 and  not v528) then v528,v529=v523:lower():match("(%d+)%s?minuto[s]?%s?e%s?(%d+)%s?segundo[s]?");end if ( not v528 and  not v529) then v529=v523:lower():match("(%d+)%s?segundo[s]?");end v526=2;end if (v526==(1051 -(572 + 477))) then v527=tonumber(v527) or (0 + 0) ;v528=tonumber(v528) or 0 ;v529=tonumber(v529) or (0 + 0) ;v526=1 + 2 ;end if (v526==3) then if ((v527>=(86 -(84 + 2))) and (v528>=(0 -0)) and (v529>=(0 + 0))) then local v743=0;local v744;while true do if (0==v743) then v744=(v527 * (4442 -(497 + 345))) + (v528 * 60) + v529 ;storage.endTime3=os.time() + v744 ;v743=1 + 0 ;end if (1==v743) then tmrMacro3:setOn();break;end end end contagem=contagem + 1 + 0 ;if (v11._storage.autoChouji.enabled and (contagem<(1336 -(605 + 728)))) then local v745=0 + 0 ;while true do if (v745==1) then tyrBot.storage._configs.cavebot_configs.selected="Voltarzoltan";CaveBot.setOn();break;end if (v745==(0 -0)) then CaveBot.setOff();delay(69 + 1431 );v745=3 -2 ;end end elseif (v11._storage.autoTaksu.enabled and (contagem<3) and (storage.endTime2<os.time())) then local v780=0 + 0 ;while true do if ((0 -0)==v780) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Voltarzoltan";v780=1 + 0 ;end if (v780==1) then CaveBot.setOn();break;end end elseif (contagem>=(492 -(457 + 32))) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="treinarZoltan";CaveBot.setOn();contagem=0;end break;end if (v526==0) then if (v522~=51) then return;end if  not v11._storage.autoTask.enabled then return;end if ( not v523:lower():find("deve esperar um intervalo de %d+ hora[s]?,? %d+ minuto[s]? e %d+ segundo[s]?") and  not v523:lower():find("deve esperar um intervalo de %d+ minuto[s]? e %d+ segundo[s]?") and  not v523:lower():find("deve esperar um intervalo de %d+ segundo[s]?")) then return;end v526=1 + 0 ;end end end);onTalk(function(v530,v531,v532,v533,v534,v535) if (v532~=(1453 -(832 + 570))) then return;end if  not v533:lower():find("voce tem certeza que quer ativar a task") then return;end if ((os.time()<=storage.endTime3) and v11._storage.autoChouji.enabled) then contagem=contagem + 2 + 0 ;CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Voltarzoltan";CaveBot.setOn();elseif ((os.time()<=storage.endTime3) and (contagem>=3)) then local v725=0 + 0 ;while true do if (v725==(3 -2)) then CaveBot.setOn();contagem=0 + 0 ;break;end if ((796 -(588 + 208))==v725) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="treinarZoltan";v725=1;end end end end);onTalk(function(v536,v537,v538,v539,v540,v541) local v542=0;while true do if (v542==2) then if v11._storage.autoTaksu.enabled then local v746=0;while true do if (v746==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="checknpc";v746=2 -1 ;end if (v746==(1801 -(884 + 916))) then CaveBot.setOn();break;end end elseif v11._storage.autoTask.enabled then local v782=0 -0 ;while true do if (v782==0) then CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="Zoltan";v782=1;end if (v782==(1 + 0)) then CaveBot.setOn();break;end end else CaveBot.setOff();tyrBot.storage._configs.cavebot_configs.selected="ficarAFK";CaveBot.setOn();end break;end if (v542==(653 -(232 + 421))) then if (v538~=(1940 -(1569 + 320))) then return;end if  not v539:lower():find("voce ja realizou as tarefas de hoje de monstros") then return;end v542=1 + 0 ;end if (v542==1) then if  not isAutoTaskEnabled() then return;end contagem=contagem + 1 + 0 ;v542=6 -4 ;end end end);onTextMessage(function(v543,v544) local v545=605 -(316 + 289) ;while true do if (v545==(0 -0)) then if  not v544:lower():find("finalizou sua task") then return;end CaveBot.gotoLabel("entregar");break;end end end);onTextMessage(function(v546,v547) if  not v547:lower():find("terminou a task") then return;end CaveBot.gotoLabel("entregar");end);onTextMessage(function(v548,v549) local v550=0 + 0 ;while true do if ((1453 -(666 + 787))==v550) then if  not v11._storage.autoTask.enabled then return;end if  not v549:lower():find("tempo da sua task fama terminou") then return;end v550=426 -(360 + 65) ;end if (v550==(1 + 0)) then CaveBot.gotoLabel("entregar");break;end end end);onTalk(function(v551,v552,v553,v554,v555,v556) if (v553~=(305 -(79 + 175))) then return;end if  not v554:lower():find("voce nao tem os 20 gold bar") then return;end CaveBot.setOff();return true;end);onTalk(function(v557,v558,v559,v560,v561,v562) if (v559~=(80 -29)) then return;end if  not v560:lower():find("voce nao tem os 10 gold bar") then return;end CaveBot.setOff();return true;end);
+]], g_ui.getRootWidget());
+local timerLabel3 = widgetTC3:getChildById(LUAOBFUSACTOR_DECRYPT_STR_0("\203\86\124\32\176\19\194\70\35", "\126\167\52\16\116\217"));
+local name = LUAOBFUSACTOR_DECRYPT_STR_0("\220\39\45\133\166\46\245\204\41\37\148\141\28\240\196\33\55", "\156\168\78\64\224\212\121");
+storage.widgetPos = storage.widgetPos or {};
+storage.widgetPos[name] = storage.widgetPos[name] or {};
+local savedPos = storage.widgetPos[name];
+if (savedPos and savedPos.x and savedPos.y) then
+	timerLabel3:setPosition({x=savedPos.x,y=savedPos.y});
+end
+timerLabel3.onDragEnter = function(widget, mousePos)
+	if not modules.corelib.g_keyboard.isCtrlPressed() then
+		return false;
+	end
+	widget:breakAnchors();
+	widget.movingReference = {x=(mousePos.x - widget:getX()),y=(mousePos.y - widget:getY())};
+	return true;
+end;
+timerLabel3.onDragMove = function(widget, mousePos, moved)
+	local parentRect = widget:getParent():getRect();
+	local x = math.min(math.max(parentRect.x, mousePos.x - widget.movingReference.x), (parentRect.x + parentRect.width) - widget:getWidth());
+	local y = math.min(math.max(parentRect.y - widget:getParent():getMarginTop(), mousePos.y - widget.movingReference.y), (parentRect.y + parentRect.height) - widget:getHeight());
+	widget:move(x, y);
+	storage.widgetPos[name] = {x=x,y=y};
+	return true;
+end;
+if not storage.endTime3 then
+	storage.endTime3 = 0;
+end
+if not storage.endTime then
+	storage.endTime = 0;
+end
+if not storage.endTime2 then
+	storage.endTime2 = 0;
+end
+local function doFormatTime(v)
+	local hours = string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\66\190\247\128\1", "\174\103\142\197"), math.floor(v / 3600));
+	local mins = string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\19\120\13\118\35", "\152\54\72\63\88\69\62"), math.floor((v / 60) - (hours * 60)));
+	local seconds = string.format(LUAOBFUSACTOR_DECRYPT_STR_0("\145\148\188\18\210", "\60\180\164\142"), math.floor(math.fmod(v, 60)));
+	return hours .. ":" .. mins .. ":" .. seconds;
+end
+tmrMacro = macro(1, function()
+	if (os.time() >= storage.endTime) then
+		widgetTC.lblTimer:setText(LUAOBFUSACTOR_DECRYPT_STR_0("\8\14\95\121\119\183\66\8", "\114\56\62\101\73\71\141"));
+		return;
+	end
+	widgetTC.lblTimer:setText(doFormatTime(os.difftime(storage.endTime, os.time())));
+end);
+tmrMacro2 = macro(1, function()
+	if ((os.time() >= storage.endTime) and (os.time() >= storage.endTime2) and (os.time() < storage.endTime3)) then
+		widgetTC2.lblTimer2:setText(LUAOBFUSACTOR_DECRYPT_STR_0("\232\185\129\148\232\179\139\148", "\164\216\137\187"));
+		irTaksu();
+		tmrMacro2:setOff();
+		return;
+	end
+	local remainingTime = os.difftime(storage.endTime2, os.time());
+	if (remainingTime < 0) then
+		remainingTime = 0;
+	end
+	widgetTC2.lblTimer2:setText(doFormatTime(remainingTime));
+end);
+tmrMacro3 = macro(1, function()
+	if (os.time() >= storage.endTime3) then
+		widgetTC3.lblTimer3:setText(LUAOBFUSACTOR_DECRYPT_STR_0("\130\182\107\226\246\164\91\130", "\107\178\134\81\210\198\158"));
+		irZoltan();
+		tmrMacro3:setOff();
+		return;
+	end
+	local remainingTime2 = os.difftime(storage.endTime3, os.time());
+	if (remainingTime2 < 0) then
+		remainingTime2 = 0;
+	end
+	widgetTC3.lblTimer3:setText(doFormatTime(remainingTime2));
+end);
+if not contagem then
+	contagem = 0;
+end
+if not contagemTaksu then
+	contagemTaksu = 0;
+end
+if not famaentregue then
+	famaentregue = false;
+end
+function irTaksu()
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\44\28\131\207\164\61\28", "\202\88\110\226\166")) then
+				TargetBot.setOff();
+				tyrBot.storage._configs.targetbot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\204\27\138\242\216\208", "\170\163\111\226\151");
+				CaveBot.setOff();
+				FollowAttack.mainMacro.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\39\63\190\44\79\37\51\30\60\166\57\64", "\73\113\80\210\88\46\87");
+				CaveBot.setOn();
+			end
+		end
+	end
+end
+function irZoltan()
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\149\62\204\27\233\132\62", "\135\225\76\173\114")) then
+				TargetBot.setOff();
+				tyrBot.storage._configs.targetbot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\21\249\176\181\190\174", "\199\122\141\216\208\204\221");
+				TargetBot.setOn();
+				CaveBot.setOff();
+				FollowAttack.mainMacro.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\185\207\17\249\118\243\191\205\17\226\121\204\162\209\4\241\118", "\150\205\189\112\144\24");
+				CaveBot.setOn();
+			end
+		end
+	end
+end
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\51\139\188\73\68\137\5\25\51\139\170\12\5\200\5\17\54\143\255\72\1\200\23\17\40\133", "\112\69\228\223\44\100\232\113")) then
+		return;
+	end
+	emFortress = false;
+	storage.endTime = os.time() + (6 * 3600);
+	storage.endTime3 = os.time() + (12 * 3600);
+	tmrMacro:setOn();
+	tmrMacro3:setOn();
+end);
+onTextMessage(function(mode, text)
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\210\22\9\210\186\117\156\219\10\71\192\163\125\198\192\30\20\216\246\120\131\148\25\6\222\183", "\230\180\127\103\179\214\28")) then
+		return;
+	end
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	storage.endTime = os.time() + (6 * 0);
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\159\16\94\6\240\64\243\135\69\89\73\237\1\242\137\8\80\80\237\69\225", "\128\236\101\63\38\132\33")) then
+		return;
+	end
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	contagem = contagem + 1;
+	storage.endTime2 = os.time() + (2 * 3600);
+	tmrMacro2:setOn();
+	if (profile._storage.autoChouji.enabled and (os.time() < storage.endTime3)) then
+		contagem = contagem + 1;
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\132\168\22\75\164\228\194\163\250\81\9\246\200\192\188\160\16", "\175\204\201\113\36\214\139");
+		CaveBot.setOn();
+	else
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\125\195\57\200\5\73", "\100\39\172\85\188");
+		CaveBot.setOn();
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\172\105\172\137\115\168\107\173\129\115\190\125\172\192\35\191\125\180\137\60", "\83\205\24\217\224")) then
+		return;
+	end
+	contagem = contagem + 1;
+	storage.endTime2 = os.time() + (6 * 3600);
+	tmrMacro2:setOn();
+	if (profile._storage.autoChouji.enabled and (os.time() < storage.endTime3)) then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\206\196\202\50\244\202\192\50\181\133\128\125\197\202\221\52\231", "\93\134\165\173");
+		CaveBot.setOn();
+	else
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\132\253\205\214\59\192", "\30\222\146\161\162\90\174\210");
+		CaveBot.setOn();
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\231\66\113\9\238\14\99\2\236\64\127\8\236\93", "\106\133\46\16")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\76\33\120\239\79", "\32\56\64\19\156\58")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\120\196\228\85\81\225\136\83\198\234\84\83\225", "\224\58\168\133\54\58\146");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\88\93\74\243\116\139\130\24", "\107\57\54\43\157\21\230\231")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\207\138\26\230\172", "\175\187\235\113\149\217\188")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\29\164\128\66\226\116\125\47\187\128\71\240\108", "\24\92\207\225\44\131\25");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\70\210\181\89\8\117\66\192", "\29\43\179\216\44\123")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\169\216\43\95\168", "\44\221\185\64")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\44\230\69\74\96\9\238\92\94\120\18\242", "\19\97\135\40\63");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\167\78\50\53\36\56\189", "\81\206\60\83\91\79")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\90\170\219\97\58", "\196\46\203\176\18\79\163\45")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\145\48\127\16\47\242\251\185\41\109\11", "\143\216\66\30\126\68\155");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\185\192\4\197\202\161\222\161\171\218\14\195\192\177\196", "\129\202\168\109\171\165\195\183")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\54\89\60\203\203", "\134\66\56\87\184\190\116")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\15\57\0\181\22\233\40\52\46\50\1\190\11\248", "\85\92\81\105\219\121\139\65");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\246\166\66\74\125\205\244\160", "\191\157\211\48\37\28")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\203\30\255\15\47", "\90\191\127\148\124")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\83\146\60\24\121\149\39\4", "\119\24\231\78");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\140\56\174\79\210\73\31\145", "\113\226\77\197\42\188\32")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\46\23\255\166\47", "\213\90\118\148")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\117\59\191\83\67\82\32", "\45\59\78\212\54");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\6\83\141\132\139\110\190\254\17\93\134\152", "\144\112\54\227\235\230\78\205")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\167\41\4\239\197", "\59\211\72\111\156\176")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\120\130\237\34\67\148\237\44\69\130", "\77\46\231\131");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\174\85\175\85\163\85\165", "\32\218\52\214")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\90\22\58\187\228", "\58\46\119\81\200\145\208\37")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\31\141\41\185\176\188\37", "\86\75\236\80\204\201\221");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\118\78\112\197\248\142\115\83\100", "\235\18\33\23\229\158")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\68\187\202\168\69", "\219\48\218\161")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\192\126\123\79\222\78\242\247", "\128\132\17\28\41\187\47");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\10\61\8\57\85\20\33", "\61\97\82\102\90")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\184\47\160\88\210", "\105\204\78\203\43\167\55\126")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\142\165\45\29\27\17", "\49\197\202\67\126\115\100\167");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\36\80\218\37\133\66\81\57\27\217\44\129\68\77", "\62\87\59\191\73\224\54")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\243\3\241\218\242", "\169\135\98\154")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\248\124\33\88\248\39\199\197\113\33\85\239\32", "\168\171\23\68\52\157\83");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\240\116\227\164\41\62", "\231\148\17\149\205\69\77")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\148\166\204\232\66", "\159\224\199\167\155\55")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\211\246\42\219\251\224", "\178\151\147\92");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\141\246\77\38\1\89\113\133\238", "\26\236\157\44\82\114\44")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\62\47\222\72\63", "\59\74\78\181")) then
+				CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\33\212\73\83\160\49\216\72", "\211\69\177\58\58"));
+			end
+		end
+	end
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\164\237\112\251\230\201\190\165\106\254\240\216\164", "\171\215\133\25\149\137")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\245\201\57\233\250", "\34\129\168\82\154\143\80\156")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\182\186\58\5\71\76\128\150\185\42\24\91", "\233\229\210\83\107\40\46");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\202\75\63\223\8\192\80\61\197", "\101\161\34\82\182")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\252\12\82\237\206", "\78\136\109\57\158\187\130\226")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\21\54\244\248\51\62\235\254\45", "\145\94\95\153");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\232\193\0\220\67\182\233\200\84\198\69\178\241\200\0\218\64\164", "\215\157\173\116\181\46")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\33\181\128\225\207", "\186\85\212\235\146")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\247\141\2\247\52\239\76\199\146\29\251\53\235\76\205\143\2\255\50\253\77", "\56\162\225\118\158\89\142");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\86\12\201\189\45\205\94\10\213\188", "\184\60\101\160\207\66")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\37\131\119\175\36", "\220\81\226\28")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\57\220\144\244\255\197\28\192\145", "\167\115\181\226\155\138");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\240\45\242\82\114\127\213", "\166\130\66\135\60\27\17")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\80\75\197\102\37", "\80\36\42\174\21")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\124\31\34\116\71\30\35\123\69\3\34", "\26\46\112\87");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\189\34\185\127\255\172\75\181\178\38\184", "\212\217\67\203\20\223\223\37")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\174\140\163\193\175", "\178\218\237\200")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\146\180\244\219\165\187\231\219\179\166", "\176\214\213\134");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\243\168\178\219\189\22\74\255\168\186\209\188\89\87\231", "\57\148\205\214\180\200\54")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\6\252\62\39\99", "\22\114\157\85\84")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\227\206\23\203\72\229\163\193\199\22\208\82\248\187", "\200\164\171\115\164\61\150");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\167\251\23\77\195\184\225\17\76\134\173", "\227\222\148\99\37")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\39\83\89\229\236", "\153\83\50\50\150")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\100\121\103\20\117\190\95\84\115\96", "\45\61\22\19\124\19\203");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\202\29\3\246\10\101\249\197\29\6\224\17", "\217\161\114\109\149\98\16")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\6\33\51\111\169", "\20\114\64\88\28\220")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\26\14\220\183\240\197\185\62\10\199\160\249\219\174\36", "\221\81\97\178\212\152\176");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\196\244\21\242\17\204\240\28\232", "\122\173\135\125\155")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\144\192\11\170\42", "\168\228\161\96\217\95\81")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\242\194\38\87\46\64\218\197\47\87\60\66", "\55\187\177\78\60\79");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\63\203\81\238\65\206\132\40\221", "\224\77\174\63\139\38\175")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\144\64\83\61\145", "\78\228\33\56")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\252\123\188\6\130\207\122\183", "\229\174\30\210\99");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\8\248\150\67\232\48\60\91\254\135\95\233\46", "\89\123\141\230\49\141\93")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\231\112\253\31\5", "\42\147\17\150\108\112")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\60\179\61\109\226\229\10\181\44\113\227\251", "\136\111\198\77\31\135");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\0\5\166\85\182\164\19\172\3\29\175\69", "\201\98\105\199\54\221\132\119")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\173\13\136\50\23", "\204\217\108\227\65\98\85")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\124\207\244\230\39\196\91\194\225\237\24\193\85\208\224", "\160\62\163\149\133\76");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\194\179\24\54\204\223\224\6\54\204\220\169\3\60", "\163\182\192\109\79")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\32\39\11\211\224", "\149\84\70\96\160")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\12\21\24\244\55\15\6\244\55\12\4\227\44\7\6\254\45", "\141\88\102\109");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\184\90\193\123\27\52\70", "\161\211\51\170\16\122\93\53")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\239\175\185\59\238", "\72\155\206\210")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\109\115\95\5\50\79\110\85\5\32\83", "\83\38\26\52\110");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\29\19\108\6\78\18\41\73\85\87\52\69\87\5\55\79\87\25\52", "\38\56\119\71")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\231\238\83\197\48", "\54\147\143\56\182\69")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\224\132\241\70\210\197\130\240\91\207\223\142\241\93\222\221\146\234", "\191\182\225\159\41");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\110\22\99\21\140\130\198\36\7\104\81\132\128\209", "\162\75\114\72\53\235\231")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\152\61\79\241\70", "\98\236\92\36\130\51")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\131\28\8\181\80\172\186\55\176\24\7\169\80", "\80\196\121\108\218\37\200\213");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\1\97\3\116\88", "\234\96\19\98\31\43\110")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\18\30\89\212\185", "\235\102\127\50\167\204\18")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\113\179\244\40\80\47\91\178\224", "\78\48\193\149\67\36");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\117\26\203\88\82\51\17\146\8\72\63\16\147", "\33\80\126\224\120")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\248\169\8\215\73", "\60\140\200\99\164")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\180\247\11\52\178\142\251\10\50\163\140\231\17", "\194\231\148\100\70");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\71\94\192\160\248\193\66\73\206\176", "\168\38\44\161\195\150")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\148\253\137\101\37", "\118\224\156\226\22\80\136\214")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\99\252\88\139\86\239\82\147\87", "\224\34\142\57");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\201\166\200\200\96\191\29\26\219\181\200\212\125\244", "\110\190\199\165\189\19\145\61")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\206\234\124\251\158", "\167\186\139\23\136\235")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\45\180\133\24\14\180\131\30\15", "\109\122\213\232");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:find(LUAOBFUSACTOR_DECRYPT_STR_0("\234\246\171", "\80\142\151\194")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\23\199\124\95\22", "\44\99\166\23")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\88\246\32\33\50\169\105\227\40\61\32\177", "\196\28\151\73\86\83");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:find(LUAOBFUSACTOR_DECRYPT_STR_0("\225\12\60\30\139\86\11", "\22\147\99\73\112\226\56\120")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\172\116\233\230\152", "\237\216\21\130\149")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\176\65\74\81\185\199\74\131\69\76\74", "\62\226\46\63\63\208\169");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\243\24\88\147\22\31\42\77", "\62\133\121\53\227\127\109\79")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\4\21\57\230\195", "\194\112\116\82\149\182\206")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\15\169\65\8\201\240\11\45\169\71\11\213", "\110\89\200\44\120\160\130");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\189\194\70\86\74\88\62\13\166\214\95\71\87\79\63\94", "\45\203\163\43\38\35\42\91")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\198\132\215\48\146", "\52\178\229\188\67\231\201")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\23\64\93\20\254\78\38\44\84\68\5\227\89\39\21\64\91\23\226", "\67\65\33\48\100\151\60");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\213\230\175\211\230\209\230\238\204\242\212\232\189", "\147\191\135\206\184")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\144\41\173\210\205", "\210\228\72\198\161\184\51")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\28\72\242\27\102\192\55\93\242\27\124\218\55\66\224\5", "\174\86\41\147\112\19");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\73\15\152\5\44\1\81\177\84\21\159\2\54", "\203\59\96\237\107\69\111\113")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\48\23\167\242\36", "\183\68\118\204\129\81\144")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\60\162\101\234\2\140\20\162\101\246\2\150\15\166\99\241", "\226\110\205\16\132\107");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\226\193\245\210\72\248", "\33\139\163\128\185")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\67\89\15\205\66", "\190\55\56\100")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\127\173\41\21\26\247\242\93\188\41", "\147\54\207\92\126\115\131");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\5\52\55\116\77\109\5\56\39\114\30", "\30\109\81\85\29\109")) then
+		return;
+	end
+	for _, spec in ipairs(getSpectators()) do
+		if (spec:isCreature() and (spec ~= player)) then
+			local specName = spec:getName():lower();
+			if (specName == LUAOBFUSACTOR_DECRYPT_STR_0("\235\112\95\165\35", "\156\159\17\52\214\86\190")) then
+				CaveBot.setOff();
+				tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\134\234\191\181\189\231\180\174\161\251\188\183\189\250", "\220\206\143\221");
+				CaveBot.setOn();
+			end
+		end
+	end
+	return true;
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\133\111\36\22\204\217\192\135\61\44\28\217\194\211\139\120", "\178\230\29\77\119\184\172")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\212\181\11\22\118\246\240\164\5\23\99\249\251", "\152\149\222\106\123\23");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\222\52\255\66\161\200\52\247\3\180\214\39\251\66\187\201\41", "\213\189\70\150\35")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\110\94\117\5\78\91\96\7\85\90\120\28\78\91", "\104\47\53\20");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\160\94\136\29\168\26\177\77\193\29\174\14\168\73\143", "\111\195\44\225\124\220")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\249\84\1\120\174\165\194\73\12\103\170\165", "\203\184\38\96\19\203");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\58\97\112\64\218\44\97\120\1\207\43\114\114", "\174\89\19\25\33")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\14\0\83\69\237\136\7\59\19\92", "\107\79\114\50\46\151\231");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\58\180\188\40\158\44\165\193\121\164\188\34\129\44\181\193\61\169", "\160\89\198\213\73\234\89\215")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\106\120\191\245\208\74\112\176\241\223\71\125\160\255\203", "\165\40\17\212\158");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\230\203\1\50\50\240\203\9\115\46\224\219\1\115\53\237\208\26\60", "\70\133\185\104\83")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\44\64\70\35\218\12\76\86\37\211\11\73\80\43\199", "\169\100\37\36\74");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\3\149\171\81\20\146\176\81\64\143\167\89\19\143\171", "\48\96\231\194")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\224\95\7\62\17\209\181\140\196\78\15\35", "\227\168\58\110\77\121\184\207");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\120\46\182\65\165\206\99\164\59\53\189\85\186\210", "\197\27\92\223\32\209\187\17")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\42\93\214\240\10\69\204\247\23\94\205", "\155\99\63\163");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\129\195\168\140\173\145\144\208\225\132\171\133\140\218\168", "\228\226\177\193\237\217")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\29\162\34\232\63\185\57\233\56\164\34\232", "\134\84\208\67");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\16\190\143\93\7\185\148\93\83\166\135\93\24\185\136\93\83\184\135\87\28", "\60\115\204\230")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\205\59\234\123\242\52\234\100\230\49\228\106\232\54\255\113\233", "\16\135\90\139");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\87\102\15\50\90\65\106\85\52\13\54\93\92\113\90", "\24\52\20\102\83\46\52")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\239\42\50\44\6\202\53\46\40\27\197\33", "\111\164\79\65\68");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\197\203\138\223\58\255\212\216\195\211\47\231\211\202\139\215", "\138\166\185\227\190\78")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\230\117\200\34\65\43\16\209\123\201\35\83\45", "\121\171\20\165\87\50\67");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\197\42\176\55\173\23\212\57\249\59\176\16\199\44\170\35", "\98\166\88\217\86\217")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\219\255\107\0\146\207\227\236\118\13\146\221\248", "\188\150\150\25\97\230");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\217\155\86\3\24\248\200\136\31\16\5\239\219\128\94\17\13\227", "\141\186\233\63\98\108")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\195\227\46\183\44\240\249\45\184\63\254\230\56\183\43", "\69\145\138\76\214");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\115\221\128\136\171\3\98\206\201\154\188\25\98\223\128\134\177", "\118\16\175\233\233\223")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\184\135\58\169\254\130\114\133\158\58\183\250\138\115", "\29\235\228\85\219\142\235");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\62\198\179\220\99\91\53\83\125\199\191\211\116\70\40\71", "\50\93\180\218\189\23\46\71")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\237\161\85\79\76\211\93\196\171\87\88\69\210", "\40\190\196\59\44\36\188");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\42\74\223\177\186\119\12\124\87\217\181\246\116\23\51\80\156\181\233\61\25\61\87\217\178\251\110\77\56\64\156\188\245\119\8\124\65\217\244\247\114\3\47\81\206\187\233", "\109\92\37\188\212\154\29")) then
+		return;
+	end
+	CaveBot.setOff();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\7\253\173\194\37\79\22\238\228\208\36\74\22\234\169\198\113\73\5\225\160", "\58\100\143\196\163\81")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\41\87\51\177\58\68\224\29\27\76\39\185\48\69\241\15\20", "\110\122\34\67\195\95\41\133");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\118\163\82\75\194\96\163\90\10\194\102\164\66\69\223\53\186\66\69\220\124\191", "\182\21\209\59\42")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\131\68\208\4\46\183\188\78\202\23\40\176\173\88\201\9\32\176", "\222\215\55\165\125\65");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\47\195\207\27\230\212\255\75\108\196\202\14\251\204\236\94\41\145\213\17\247\205\232\94\35\223", "\42\76\177\166\122\146\161\141")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\144\134\17\199\116\119\177\143\22\197\124\122\160\158\10\192\99\121\169\158\4\192", "\22\197\234\101\174\25");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\44\54\164\200\115\189\151\135\109\55\183\213\119\187\194\148\44\116\179\221\123\191\222\148\40\120\229", "\230\77\84\197\188\22\207\183")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\207\21\203\236\133\179\245\47\246\24\210\253\130", "\85\153\116\166\156\236\193\144");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\167\242\68\178\240\21\182\225\13\165\229\13\180\233\95\182\164\13\177\244\76\167\225\4", "\96\196\128\45\211\132")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\3\140\118\79\219\189\177\213\32\153\126\91\200\160\184\204\52\131", "\184\85\237\27\63\178\207\212");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\11\75\0\94\28\76\27\94\72\78\8\82\29", "\63\104\57\105")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\60\134\169\81\17\136\168\80\10\137", "\36\107\231\196");
+	CaveBot.setOn();
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\94\167\171\134\73\160\176\134\29\175\187\143\92\187", "\231\61\213\194")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\51\180\53\114\7\183\50\127\29\172\51", "\19\105\205\93");
+	CaveBot.setOn();
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\168\24\219\143\62\186\72\206\128\45\168\72\207\148\58\164\72\221\142\50\185\4\219\149\62\233\29\211\128\127\189\9\205\138", "\95\201\104\190\225")) then
+		return;
+	end
+	CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\173\210\196\192\191\200", "\174\207\171\161"));
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find("aniquile então") then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\196\240\4\240\241\216\229\241\30\227\241\195\236\242\6\252\246\216\229\255", "\183\141\158\109\147\152");
+	CaveBot.setOn();
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\58\6\229\9\108\12\245\24\45\73\229\3\33\73\243\1\45\73\242\13\63\2\166\13\56\0\240\13\40\8", "\108\76\105\134")) then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\194\203\184\226\199\228\205\190\242\222\226\209\176\237\197\228\203\190\233\207", "\174\139\165\209\129");
+	CaveBot.setOn();
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\179\188\230\196\134\5\113\98\166\161\162\213\199\16\123\107\227\163\237\211\134\19\127\118\183\188\241\129\199\67\115\121\167\178\162\151\134\11\127\106\162\160", "\24\195\211\130\161\166\99\16")) then
+		return;
+	end
+	contagem = contagem + 1;
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\124\12\229\56\82\24", "\118\38\99\137\76\51");
+	CaveBot.setOn();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not profile._storage.autoTaksu.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\235\41\6\23\73\37\238\50\4\82\10\47\240\102\16\31\8\96\233\39\22\25\73\33\233\47\19\19\13\33", "\64\157\70\101\114\105")) then
+		return;
+	end
+	CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\73\186", "\112\32\200\199\131"));
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\40\85\79\177\208\191\43\57\16\88\189\131\184\55\45\16\73\180\215\162\47\45\16\72\185\208\160", "\66\76\48\60\216\163\203")) then
+		return;
+	end
+	contagem = contagem + 1;
+	if not profile._storage.autoChouji.enabled then
+		return;
+	end
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\146\135\126\252\77\193\41\181\213\57\190\31\237\43\170\143\120", "\68\218\230\25\147\63\174");
+	CaveBot.setOn();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\172\58\86\66\183\190\106\67\94\179\160\35\70\65\246\172\41\80\67\163\163\62", "\214\205\74\51\44")) then
+		return;
+	end
+	CaveBot.setOff();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\234\67\230\249\55\232\73\227\240\126\224\77\240\188\118\234\73\236\253\100\186\31\162\232\118\233\71\241", "\23\154\44\130\156")) then
+		return;
+	end
+	contagem = contagem + 1;
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\43\169\161\186\55\29", "\115\113\198\205\206\86");
+	CaveBot.setOn();
+	TargetBot.setOff();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\146\88\253\95\196\93\255\26\133\67\247\84\131\94\235\26\133\23\239\79\133\89\234\83\128\86\250\95\196\90\255\66\141\90\255\26\128\82\190\9\196\67\255\73\143\68\190\94\129\23\243\85\134\68\190\94\141\86\236\83\133\68", "\58\228\55\158")) then
+		return;
+	end
+	contagem = contagem + 1;
+	CaveBot.setOff();
+	tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\142\134\220\58\61\163", "\85\212\233\176\78\92\205");
+	CaveBot.setOn();
+	TargetBot.setOff();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if (not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\78\93\158\231\10\93\155\242\79\74\137\240\10\77\133\162\67\86\156\231\88\78\137\238\69\24\140\231\10\29\140\169\10\80\135\240\75\99\155\223\21\20\215\162\15\92\195\162\71\81\134\247\94\87\179\241\119\7\200\231\10\29\140\169\10\75\141\229\95\86\140\237\113\75\181\189", "\130\42\56\232")) and not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\238\176\50\230\0\58\249\165\33\241\65\45\170\160\41\163\73\49\254\176\54\245\65\51\229\245\32\230\0\122\238\254\100\238\73\49\255\161\43\216\83\2\181\245\33\163\5\59\161\245\55\230\71\42\228\177\43\216\83\2\181", "\95\138\213\68\131\32")) and not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\46\45\183\70\54\47\59\177\70\100\43\58\225\86\123\106\33\175\87\115\56\62\160\79\121\106\44\164\3\51\46\99\225\80\115\45\61\175\71\121\17\59\156\28", "\22\74\72\193\35"))) then
+		return;
+	end
+	local hours, minutes, seconds = text:lower():match(LUAOBFUSACTOR_DECRYPT_STR_0("\100\60\224\19\101\60\247\7\36\118\246\89\23\106\217\7\105\106\187\20\115\60\247\7\100\60\224\19\101\60\247\7\33\112\234\77\56\118\223\75\17\38\161\75\115\124\161\75\115\49\161\92\103\48\161\75\115\106\225\95\57\119\224\87\23\106\217\7", "\56\76\25\132"));
+	if (not hours and not minutes) then
+		minutes, seconds = text:lower():match(LUAOBFUSACTOR_DECRYPT_STR_0("\22\132\175\109\134\27\210\244\43\198\80\212\191\41\244\77\252\244\99\220\1\196\238\53\144\22\132\175\109\134\27\210\244\53\202\89\212\165\34\192\101\210\150\121", "\175\62\161\203\70"));
+	end
+	if (not minutes and not seconds) then
+		seconds = text:lower():match(LUAOBFUSACTOR_DECRYPT_STR_0("\116\152\199\88\124\121\206\156\0\48\59\200\205\23\58\7\206\254\76", "\85\92\189\163\115"));
+	end
+	hours = tonumber(hours) or 0;
+	minutes = tonumber(minutes) or 0;
+	seconds = tonumber(seconds) or 0;
+	if ((hours >= 0) and (minutes >= 0) and (seconds >= 0)) then
+		local totalTime = (hours * 3600) + (minutes * 60) + seconds;
+		storage.endTime3 = os.time() + totalTime;
+		tmrMacro3:setOn();
+	end
+	contagem = contagem + 1;
+	if (profile._storage.autoChouji.enabled and (contagem < 3)) then
+		CaveBot.setOff();
+		delay(1500);
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\31\163\60\44\40\190\42\55\37\184\49\54", "\88\73\204\80");
+		CaveBot.setOn();
+	elseif (profile._storage.autoTaksu.enabled and (contagem < 3) and (storage.endTime2 < os.time())) then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\24\140\28\82\40\200\52\140\28\82\40\212", "\186\78\227\112\38\73");
+		CaveBot.setOn();
+	elseif (contagem >= 3) then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\232\69\248\92\93\123\238\109\242\89\71\123\242", "\26\156\55\157\53\51");
+		CaveBot.setOn();
+		contagem = 0;
+	end
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\154\215\21\220\248\68\137\213\86\218\189\66\152\221\12\216\248\65\153\221\86\200\173\85\158\152\23\205\177\70\141\202\86\216\248\68\141\203\29", "\48\236\184\118\185\216")) then
+		return;
+	end
+	if ((os.time() <= storage.endTime3) and profile._storage.autoChouji.enabled) then
+		contagem = contagem + 2;
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\211\178\91\36\206\38\255\178\91\36\206\58", "\84\133\221\55\80\175");
+		CaveBot.setOn();
+	elseif ((os.time() <= storage.endTime3) and (contagem >= 3)) then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\169\245\33\175\201\93\175\221\43\170\211\93\179", "\60\221\135\68\198\167");
+		CaveBot.setOn();
+		contagem = 0;
+	end
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\248\178\251\134\2\211\239\253\234\134\67\213\231\167\247\150\2\216\253\253\236\130\80\220\232\188\235\195\70\220\174\181\247\137\71\153\234\184\184\142\77\215\253\169\234\140\81", "\185\142\221\152\227\34")) then
+		return;
+	end
+	if not isAutoTaskEnabled() then
+		return;
+	end
+	contagem = contagem + 1;
+	if profile._storage.autoTaksu.enabled then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\91\205\82\249\72\61\231\91", "\151\56\165\55\154\35\83");
+		CaveBot.setOn();
+	elseif profile._storage.autoTask.enabled then
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\154\76\9\250\161\77", "\142\192\35\101");
+		CaveBot.setOn();
+	else
+		CaveBot.setOff();
+		tyrBot.storage._configs.cavebot_configs.selected = LUAOBFUSACTOR_DECRYPT_STR_0("\208\124\42\162\245\173\138\61", "\118\182\21\73\195\135\236\204");
+		CaveBot.setOn();
+	end
+end);
+onTextMessage(function(mode, text)
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\14\53\20\65\8\4\231\7\41\90\83\17\12\189\28\61\9\75", "\157\104\92\122\32\100\109")) then
+		return;
+	end
+	CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\166\168\219\216\56\32\140\185", "\203\195\198\175\170\93\71\237"));
+end);
+onTextMessage(function(mode, text)
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\58\78\44\216\88\31\243\59\11\63\149\69\16\239\37", "\156\78\43\94\181\49\113")) then
+		return;
+	end
+	CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\119\230\208\177\14\68\120\96", "\25\18\136\164\195\107\35"));
+end);
+onTextMessage(function(mode, text)
+	if not profile._storage.autoTask.enabled then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\252\40\164\95\125\252\197\185\168\62\188\78\50\168\192\171\227\109\175\78\127\189\129\172\237\63\164\70\124\179\212", "\216\136\77\201\47\18\220\161")) then
+		return;
+	end
+	CaveBot.gotoLabel(LUAOBFUSACTOR_DECRYPT_STR_0("\40\226\63\200\13\219\131\63", "\226\77\140\75\186\104\188"));
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\175\193\211\58\15\183\207\223\127\91\188\195\144\48\92\249\156\128\127\72\182\194\212\127\77\184\220", "\47\217\174\176\95")) then
+		return;
+	end
+	CaveBot.setOff();
+	return true;
+end);
+onTalk(function(name, level, mode, text, channelId, pos)
+	if (mode ~= 51) then
+		return;
+	end
+	if not text:lower():find(LUAOBFUSACTOR_DECRYPT_STR_0("\174\210\117\7\242\90\121\41\248\201\115\15\242\91\107\102\233\141\54\5\189\88\124\102\186\220\100", "\70\216\189\22\98\210\52\24")) then
+		return;
+	end
+	CaveBot.setOff();
+	return true;
+end);
